@@ -14,13 +14,18 @@ const Home = () => {
   }
   return (
     <div className='relative overflow-hidden hero-container'>
-      <div onClick={setImg1} className='absolute text-white top-1/3 text-6xl z-10 opacity-25 right-5 cursor-pointer'><GoChevronRight/></div>
-      <div onClick={setImg2} className='absolute text-white top-1/3 text-6xl z-10 opacity-25 left-5 cursor-pointer'><GoChevronLeft/></div>
+      <div onClick={setImg1} className='fixed text-white top-1/3 text-6xl z-10 opacity-25 right-5 cursor-pointer'><GoChevronRight/></div>
+      <div onClick={setImg2} className='fixed text-white top-1/3 text-6xl z-10 opacity-25 left-5 cursor-pointer'><GoChevronLeft/></div>
       <Navbar />
       <img 
         src={homeImg}
-        className='w-full hero-image brightness-50 fade-in'
+        className='w-full hero-image brightness-50'
       />
+      <section className='fixed z-20 text-white top-100 w-450 left-1/3 text-center'>
+        <p className='mt-10 mb-2 font-mono'>In the right outfit anything is possible</p>
+        <p className='text-7xl w-full mb-10 font-semibold'>Unleash Your Fashion Experience !</p>
+        <button className='bg-white text-black px-6 py-2 font-mono hover:bg-transparent hover:text-white transition cursor-pointer'>Shop Now</button>
+      </section>
     </div>
   )
 }
