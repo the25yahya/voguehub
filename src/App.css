@@ -1,0 +1,60 @@
+/*css rest*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*=======================================*/
+/*general css*/
+nav{
+
+    border-bottom: solid 0.2px rgb(97, 75, 75);
+}
+    .title{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .hero-image {
+        width: 100%;
+        height: auto;
+        animation: zoomAnimation 4s infinite alternate; /* Adjust the duration as needed */
+      }
+  
+      @keyframes zoomAnimation {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.2);
+        }
+      }
+.navigation p{
+    display: flex; 
+    align-items: center;
+    margin: 0px 12px 0px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.navigation p{
+    margin-right: 4px;
+}
+.navigation p span{
+    margin-left: 5px;
+    cursor: pointer;
+}
+@media  screen and (max-width:1050px) {
+   }
+  /*========================================*/    
+
+
+  /*key frame*/
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .fade-in {
+    animation: fadeIn 1s ease-in-out; /* You can adjust the duration and timing function as needed */
+  }
+  /*=======================================================================================*/
