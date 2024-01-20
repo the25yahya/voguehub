@@ -10,23 +10,23 @@ const Navbar = () => {
   return (
     <nav className='fixed w-full z-10 text-white flex justify-between items-center p-4 py-8'>
       <div className='hidden navigation lg:flex'>
-        <p>
+        <p className='relative'>
           <span>SHOP</span>
           <span><FaChevronDown /></span>
         </p>
-        <p>
+        <p className='relative'>
           <span>PRODUCTS</span>
           <span><FaChevronDown /></span>
         </p>
-        <p>
+        <p className='relative'>
           <span>PAGES</span>
           <span><FaChevronDown /></span>
         </p>
-        <p>
+        <p className='relative'>
           <span>BLOG</span>
           <span><FaChevronDown /></span>
         </p>
-        <p>
+        <p className='relative'>
           <span>FEATURES</span>
           <span><FaChevronDown /></span>
         </p>

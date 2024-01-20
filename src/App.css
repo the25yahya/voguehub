@@ -40,7 +40,10 @@ nav{
     margin-left: 5px;
     cursor: pointer;
 }
-@media  screen and (max-width:1050px) {
+@media  screen and (max-width:960px) {
+     .hero .intro{
+      margin-top: 60px;
+     }
    }
   /*========================================*/    
 

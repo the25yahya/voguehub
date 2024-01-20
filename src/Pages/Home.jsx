@@ -14,17 +14,17 @@ const Home = () => {
   }
   return (
     <div className='relative overflow-hidden hero-container'>
-      <div onClick={setImg1} className='fixed text-white top-1/3 text-6xl z-10 opacity-25 right-5 cursor-pointer'><GoChevronRight/></div>
-      <div onClick={setImg2} className='fixed text-white top-1/3 text-6xl z-10 opacity-25 left-5 cursor-pointer'><GoChevronLeft/></div>
+      <div onClick={setImg1} className='fixed text-white top-100 md:top-200 text-6xl z-30 opacity-25 right-5 cursor-pointer'><GoChevronRight/></div>
+      <div onClick={setImg2} className='fixed text-white top-100 md:top-200 text-6xl z-30 opacity-25 left-5 cursor-pointer'><GoChevronLeft/></div>
       <Navbar />
       <img 
         src={homeImg}
-        className='w-full hero-image brightness-50'
+        className='w-full h-400 sm:h-auto hero-image brightness-50'
       />
-      <section className='fixed z-20 text-white top-100 w-450 left-1/3 text-center'>
-        <p className='mt-10 mb-2 font-mono'>In the right outfit anything is possible</p>
-        <p className='text-7xl w-full mb-10 font-semibold'>Unleash Your Fashion Experience !</p>
-        <button className='bg-white text-black px-6 py-2 font-mono hover:bg-transparent hover:text-white transition cursor-pointer'>Shop Now</button>
+      <section className='fixed top-20 z-20 text-white md:top-100 w-full flex flex-col text-center items-center pb-10 hero'>
+        <p className='mt-10 mb-2 font-mono intro text-sm sm:text-base'>In the right outfit anything is possible</p>
+        <p className='text-3xl w-200 sm:text-5xl sm:w-300 md:text-7xl md:w-450 mb-10 font-semibold mainp'>Unleash Your Fashion Experience !</p>
+        <button className='bg-white text-black px-6 py-2 font-mono hover:bg-transparent hover:text-white transition cursor-pointer w-150'>Shop Now</button>
       </section>
     </div>
   )
