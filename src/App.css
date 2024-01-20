@@ -40,6 +40,14 @@ nav{
     margin-left: 5px;
     cursor: pointer;
 }
+.layout p{
+  margin-bottom: 10px;
+  transition: .2s;
+}
+.layout p:hover{
+  opacity: 50%;
+  cursor: pointer;
+}
 @media  screen and (max-width:960px) {
      .hero .intro{
       margin-top: 60px;

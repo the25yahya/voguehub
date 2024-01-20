@@ -5,14 +5,16 @@ import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { MdOutlineMenu } from "react-icons/md";
+import Shop from './Shop.jsx';
 
 const Navbar = () => {
   return (
-    <nav className='fixed w-full z-10 text-white flex justify-between items-center p-4 py-8'>
+    <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8'>
       <div className='hidden navigation lg:flex'>
         <p className='relative'>
           <span>SHOP</span>
           <span><FaChevronDown /></span>
+          <Shop />
         </p>
         <p className='relative'>
           <span>PRODUCTS</span>
