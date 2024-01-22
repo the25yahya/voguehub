@@ -23,7 +23,7 @@ export const ContextProvider = ({children}) => {
       }, 2500);
     }, []);
     /////////////////////////////////
-    const [homeImg,setHomeImg] = useState('https://burst.shopifycdn.com/photos/red-on-red-fashion.jpg?width=925&format=pjpg&exif=0&iptc=0');
+    const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
           value={{setHomeImg,homeImg}}
