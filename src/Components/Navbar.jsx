@@ -11,29 +11,29 @@ const Navbar = () => {
   return (
     <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8'>
       <div className='hidden navigation lg:flex'>
-        <p className='relative'>
-          <span>SHOP</span>
+        <div className='relative flex items-center mr-5 text-sm'>
+          <span className='mr-1'>SHOP</span>
           <span><FaChevronDown /></span>
           <Shop />
-        </p>
-        <p className='relative'>
-          <span>PRODUCTS</span>
+        </div>
+        <div className='relative flex items-center mr-5 text-sm'>
+          <span className='mr-1'>PRODUCTS</span>
           <span><FaChevronDown /></span>
-        </p>
-        <p className='relative'>
-          <span>PAGES</span>
+        </div>
+        <div className='relative flex items-center mr-5 text-sm'>
+          <span className='mr-1'>PAGES</span>
           <span><FaChevronDown /></span>
-        </p>
-        <p className='relative'>
-          <span>BLOG</span>
+        </div>
+        <div className='relative flex items-center mr-5 text-sm'>
+          <span className='mr-1'>BLOG</span>
           <span><FaChevronDown /></span>
-        </p>
-        <p className='relative'>
-          <span>FEATURES</span>
+        </div>
+        <div className='relative flex items-center mr-5 text-sm'>
+          <span className='mr-1'>FEATURES</span>
           <span><FaChevronDown /></span>
-        </p>
+        </div>
       </div>
-      <div className='mr-40'>
+      <div className='mr-0 sm:mr-40'>
         <h1 className='title text-3xl cursor-pointer'>VogueHUB</h1>
       </div>
       <div className='flex items-center'>
