@@ -13,6 +13,7 @@ const initialState = {
 export const ContextProvider = ({children}) => {
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [shop, setShop] = useState(false);
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
 
@@ -26,7 +27,7 @@ export const ContextProvider = ({children}) => {
     const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg}}
+          value={{setHomeImg,homeImg,shop,setShop}}
         >
             {children}
         </StateContext.Provider>

@@ -6,15 +6,29 @@ import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { MdOutlineMenu } from "react-icons/md";
 import Shop from './Shop.jsx';
+import { useStateContext } from '../Contexts/ContextProvider';
 
 const Navbar = () => {
+
+  const {shop,setShop} = useStateContext();
+   const OpenShop = () => {
+    setShop(true);
+   }
+   const CloseShop = () => {
+    setShop(false);
+   }
   return (
     <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8'>
-      <div className='hidden navigation lg:flex'>
-        <div className='relative flex items-center mr-5 text-sm'>
+      <div className='hidden navigation lg:flex cursor-pointer'>
+        <div onMouseEnter={OpenShop} 
+             onMouseLeave={CloseShop}     
+        className='relative flex items-center mr-5 text-sm'>
           <span className='mr-1'>SHOP</span>
           <span><FaChevronDown /></span>
-          <Shop />
+          {shop ? (
+            <Shop />
+      ) : null}
+      {/* Other content goes here */}
         </div>
         <div className='relative flex items-center mr-5 text-sm'>
           <span className='mr-1'>PRODUCTS</span>

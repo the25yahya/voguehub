@@ -1,8 +1,11 @@
 import React from 'react'
+import { useStateContext } from '../Contexts/ContextProvider'
 
 const Shop = () => {
+
+  const {shop, setShop} = useStateContext();
   return (
-    <div className='flex justify-around px-5 py-5 absolute -bottom-150 -left-10 bg-white w-1000 text-black hidden'>
+    <div className='flex justify-around px-5 py-5 absolute -bottom-150 -left-10 bg-white w-1000 text-black fade-in'>
         <div className='flex flex-col justify-start layout'>
             <h2 className='text-xl mb-3'>Shop List</h2>
             <p>Categories</p>
