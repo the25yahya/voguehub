@@ -14,14 +14,10 @@ const Navbar = () => {
    const OpenShop = () => {
     setShop(true);
    }
-   const CloseShop = () => {
-    setShop(false);
-   }
   return (
     <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8'>
       <div className='hidden navigation lg:flex cursor-pointer'>
-        <div onMouseEnter={OpenShop} 
-             onMouseLeave={CloseShop}     
+        <div onMouseEnter={OpenShop}      
         className='relative flex items-center mr-5 text-sm'>
           <span className='mr-1'>SHOP</span>
           <span><FaChevronDown /></span>
