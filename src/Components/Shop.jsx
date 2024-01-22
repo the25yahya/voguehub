@@ -27,11 +27,15 @@ const Shop = () => {
         </div>
         <div>
             <h2 className='text-xl mb-3'>New collections</h2>
-            <div className='flex justify-betweem'>
-              <div className='relative'><img className='w-200 brightness-50' src='https://www.brides.com/thmb/cXVZSdZOIvoy1th1_usj3X4HQXw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Main-Amsale-Fall-2024-Option-1-ce44143e181a43769f4e77ad3aae0625.jpg' />
-              <h1 className='absolute top-16 left-10 text-4xl text-white'>Dresses</h1>
+            <div className='flex justify-between'>
+              <div className='relative group'><img className='w-200 brightness-50' src='https://www.brides.com/thmb/cXVZSdZOIvoy1th1_usj3X4HQXw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Main-Amsale-Fall-2024-Option-1-ce44143e181a43769f4e77ad3aae0625.jpg' />
+              <h2 className='absolute top-36 left-10 text-lg text-white border-b border-white fade-in hidden group-hover:block
+              '>View Collection</h2>
+              <h1 className='absolute top-16 left-10 text-4xl text-white  '>Dresses</h1>
               </div>
-              <div className='relative'><img className='w-200 ml-5 brightness-50' src='https://hips.hearstapps.com/hmg-prod/images/irina-shayk-is-seen-during-a-street-style-shoot-on-march-01-news-photo-1677750984.jpg?crop=1.00xw:0.669xh;0,0.148xh&resize=640:*' />
+              <div className='relative group'><img className='w-200 ml-5 brightness-50' src='https://hips.hearstapps.com/hmg-prod/images/irina-shayk-is-seen-during-a-street-style-shoot-on-march-01-news-photo-1677750984.jpg?crop=1.00xw:0.669xh;0,0.148xh&resize=640:*' />
+              <h2 className='absolute top-36 left-14 text-lg text-white border-b border-white fade-in hidden group-hover:block
+              '>View Collection</h2>
               <h1 className='absolute top-16 left-12 text-3xl text-white'>OuterWear</h1>
               </div>
             </div>

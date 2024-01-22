@@ -14,6 +14,10 @@ export const ContextProvider = ({children}) => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [shop, setShop] = useState(false);
+  const [navCart, setNavCart] = useState(false);
+  const ToggleNavCart = () => {
+    setNavCart(!navCart);
+   }
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
 
@@ -27,7 +31,7 @@ export const ContextProvider = ({children}) => {
     const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ToggleNavCart}}
         >
             {children}
         </StateContext.Provider>

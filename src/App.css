@@ -73,4 +73,17 @@ nav{
   .fade-in {
     animation: fadeIn 1s ease-in-out; /* You can adjust the duration and timing function as needed */
   }
+  @keyframes slideFromRight {
+    0% {
+      right: -30%; /* Starting position (outside the container) */
+    }
+    100% {
+      right: 0; /* Ending position (inside the container) */
+    }
+  }
+  .slide-right {
+    animation: slideFromRight .5s ease-out forwards;
+    position: relative; /* Make sure the div stays in place after the animation */
+    right: -100%; /* Start the div outside the left edge of its container */
+  }
   /*=======================================================================================*/
