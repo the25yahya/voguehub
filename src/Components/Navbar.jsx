@@ -8,19 +8,23 @@ import { MdOutlineMenu } from "react-icons/md";
 import Shop from './Shop.jsx';
 import { useStateContext } from '../Contexts/ContextProvider';
 import NavCart from './NavCart';
+import Products from './Products';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,ToggleNavCart} = useStateContext();
+  const {shop,setShop,navCart,ToggleNavCart,ProductsNav,setProductsNav} = useStateContext();
    const OpenShop = () => {
     setShop(true);
+   }
+   const OpenProducts = () => {
+    setProductsNav(true);
    }
 
   return (
     <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8 border-transparent'>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
-        className='relative flex items-center mr-5 text-sm'>
+        className='relative flex items-center mr-5 text-sm  navp'>
           <span className='mr-1 font-semibold'>SHOP</span>
           <span><FaChevronDown /></span>
           {shop ? (
@@ -28,19 +32,22 @@ const Navbar = () => {
       ) : null}
       {/* Other content goes here */}
         </div>
-        <div className='relative flex items-center mr-5 text-sm'>
+        <div onMouseEnter={OpenProducts} className='relative flex items-center mr-5 text-sm navp'>
           <span className='mr-1 font-semibold'>PRODUCTS</span>
           <span><FaChevronDown /></span>
+          {ProductsNav ? (
+            <Products/>
+      ) : null}
         </div>
-        <div className='relative flex items-center mr-5 text-sm'>
+        <div className='relative flex items-center mr-5 text-sm navp'>
           <span className='mr-1 font-semibold'>PAGES</span>
           <span><FaChevronDown /></span>
         </div>
-        <div className='relative flex items-center mr-5 text-sm'>
+        <div className='relative flex items-center mr-5 text-sm navp'>
           <span className='mr-1 font-semibold'>BLOG</span>
           <span><FaChevronDown /></span>
         </div>
-        <div className='relative flex items-center mr-5 text-sm'>
+        <div className='relative flex items-center mr-5 text-sm navp'>
           <span className='mr-1 font-semibold'>FEATURES</span>
           <span><FaChevronDown /></span>
         </div>

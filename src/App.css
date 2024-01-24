@@ -31,15 +31,29 @@ nav{
           transform: scale(1.2);
         }
       }
-.navigation p{
+.navigation .navp{
     display: flex; 
     align-items: center;
     margin: 0px 12px 0px 12px;
     font-size: 13px;
     font-weight: 500;
 }
-.navigation p{
+.navigation .navp::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  z-index: -1;
+  transition: all 250ms
+ }
+.navigation .navp{
     margin-right: 4px;
+}
+.navigation .navp:hover::before{
+  width: 100%;
 }
 .navigation p span{
     margin-left: 5px;
@@ -71,7 +85,7 @@ nav{
     }
   }
   .fade-in {
-    animation: fadeIn 1s ease-in-out; /* You can adjust the duration and timing function as needed */
+    animation: fadeIn .5s ease-in-out; /* You can adjust the duration and timing function as needed */
   }
   @keyframes slideFromRight {
     0% {
