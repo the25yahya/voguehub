@@ -11,11 +11,11 @@ const Products = () => {
     <div onMouseLeave={CloseProducts} className='flex justify-around shadow-xl px-5 py-5 absolute -bottom-250 -left-40 bg-white w-1000 text-black fade-in'>
         <div>
             <h2 className='text-3xl mb-3'>Our Products</h2>
-            <h4 className='hover:opacity-45 transition text-sm font-semibold my-2 '>Men Products</h4>
-            <h4 className='hover:opacity-45 transition text-sm font-semibold my-2 '>Women Products</h4>
-            <h4 className='hover:opacity-45 transition text-sm font-semibold my-2 '>Kids Products</h4>
-            <h4 className='hover:opacity-45 transition text-sm font-semibold my-2 '>New Arrivals</h4>
-            <h4 className='hover:opacity-45 transition text-sm font-semibold my-2  '>Best Sellers</h4>
+            <h4 className='hover:opacity-45 transition text-lg font-semibold my-2 '>Men Products</h4>
+            <h4 className='hover:opacity-45 transition text-lg font-semibold my-2 '>Women Products</h4>
+            <h4 className='hover:opacity-45 transition text-lg font-semibold my-2 '>Kids Products</h4>
+            <h4 className='hover:opacity-45 transition text-lg font-semibold my-2 '>New Arrivals</h4>
+            <h4 className='hover:opacity-45 transition text-lg font-semibold my-2  '>Best Sellers</h4>
         </div>
         <div>
             <h2 className='text-xl mb-3 font-semibold'>Hot Items</h2>

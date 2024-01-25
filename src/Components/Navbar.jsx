@@ -9,47 +9,61 @@ import Shop from './Shop.jsx';
 import { useStateContext } from '../Contexts/ContextProvider';
 import NavCart from './NavCart';
 import Products from './Products';
+import PagesNav from './PagesNav';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,ToggleNavCart,ProductsNav,setProductsNav} = useStateContext();
+  const {shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar} = useStateContext();
    const OpenShop = () => {
     setShop(true);
+    setPages(false);
+    setProductsNav(false);
    }
    const OpenProducts = () => {
     setProductsNav(true);
+    setShop(false);
+    setPages(false);
    }
-
+   const OpenPages = () => {
+    setPages(true);
+    setProductsNav(false);
+    setShop(false);
+   }
+   const OpenSidebar = () => {
+    setSidebar(true);
+   }
+   const OpenNavCart = () => {
+    setNavCart(true);
+   }
   return (
-    <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8 border-transparent'>
+    <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8 border-transparent border-b border-gray-100'>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
-        className='relative flex items-center mr-5 text-sm  navp'>
+        className='relative flex items-center text-sm  navp'>
           <span className='mr-1 font-semibold'>SHOP</span>
-          <span><FaChevronDown /></span>
+          <span className='mr-3'><FaChevronDown /></span>
           {shop ? (
             <Shop />
       ) : null}
       {/* Other content goes here */}
         </div>
-        <div onMouseEnter={OpenProducts} className='relative flex items-center mr-5 text-sm navp'>
+        <div onMouseEnter={OpenProducts} className='relative flex items-center text-sm navp'>
           <span className='mr-1 font-semibold'>PRODUCTS</span>
-          <span><FaChevronDown /></span>
+          <span className='mr-3'><FaChevronDown /></span>
           {ProductsNav ? (
             <Products/>
       ) : null}
         </div>
-        <div className='relative flex items-center mr-5 text-sm navp'>
+        <div onMouseEnter={OpenPages} className='relative flex items-center text-sm navp'>
           <span className='mr-1 font-semibold'>PAGES</span>
-          <span><FaChevronDown /></span>
+          <span className='mr-3'><FaChevronDown /></span>
+          {pages ? (
+            <PagesNav />
+      ) : null}
         </div>
-        <div className='relative flex items-center mr-5 text-sm navp'>
+        <div className='relative flex items-center text-sm navp'>
           <span className='mr-1 font-semibold'>BLOG</span>
-          <span><FaChevronDown /></span>
-        </div>
-        <div className='relative flex items-center mr-5 text-sm navp'>
-          <span className='mr-1 font-semibold'>FEATURES</span>
-          <span><FaChevronDown /></span>
         </div>
       </div>
       <div className='mr-0 sm:mr-48'>
@@ -59,13 +73,16 @@ const Navbar = () => {
         <p className='mr-4 text-lg font-semibold cursor-pointer'>LOGIN</p>
         <div className='mr-4 text-2xl font-bold cursor-pointer'><IoIosSearch/></div>
         <div className='mr-4 text-xl cursor-pointer'><FaRegHeart/></div>
-        <div onClick={ToggleNavCart} className='mr-4 text-xl cursor-pointer'>
+        <div onClick={OpenNavCart} className='mr-4 text-xl cursor-pointer'>
         <HiOutlineShoppingBag/>
         {navCart ? (
             <NavCart />
       ) : null}
+      {sidebar ? (
+            <Sidebar />
+      ) : null}
         </div>
-        <div className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu /></div>
+        <div onClick={OpenSidebar} className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu /></div>
       </div>
     </nav>
   )
