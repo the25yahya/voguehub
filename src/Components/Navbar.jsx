@@ -31,7 +31,7 @@ const Navbar = () => {
     setShop(false);
    }
   return (
-    <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8 border-transparent border-b border-gray-100'>
+    <nav className='fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 border-transparent border-b border-gray-100'>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
         className='relative flex items-center text-sm  navp'>
