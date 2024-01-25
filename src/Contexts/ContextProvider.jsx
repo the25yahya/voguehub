@@ -18,6 +18,12 @@ export const ContextProvider = ({children}) => {
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const ToggleNavCart = () => {
+    setNavCart(!navCart);
+  }
+  const ToggleSidebar = () => {
+    setSidebar(!sidebar)
+  }
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
 
@@ -31,7 +37,7 @@ export const ContextProvider = ({children}) => {
     const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar}}
         >
             {children}
         </StateContext.Provider>

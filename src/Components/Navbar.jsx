@@ -14,7 +14,7 @@ import Sidebar from './Sidebar';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -29,12 +29,6 @@ const Navbar = () => {
     setPages(true);
     setProductsNav(false);
     setShop(false);
-   }
-   const OpenSidebar = () => {
-    setSidebar(true);
-   }
-   const OpenNavCart = () => {
-    setNavCart(true);
    }
   return (
     <nav className='fixed w-full z-40 text-white flex justify-between items-center p-4 py-8 border-transparent border-b border-gray-100'>
@@ -73,16 +67,17 @@ const Navbar = () => {
         <p className='mr-4 text-lg font-semibold cursor-pointer'>LOGIN</p>
         <div className='mr-4 text-2xl font-bold cursor-pointer'><IoIosSearch/></div>
         <div className='mr-4 text-xl cursor-pointer'><FaRegHeart/></div>
-        <div onClick={OpenNavCart} className='mr-4 text-xl cursor-pointer'>
+        <div onClick={ToggleNavCart} className='mr-4 text-xl cursor-pointer'>
         <HiOutlineShoppingBag/>
         {navCart ? (
             <NavCart />
       ) : null}
-      {sidebar ? (
+        </div>
+        <div onClick={ToggleSidebar} className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu />
+        {sidebar ? (
             <Sidebar />
       ) : null}
         </div>
-        <div onClick={OpenSidebar} className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu /></div>
       </div>
     </nav>
   )
