@@ -18,6 +18,7 @@ export const ContextProvider = ({children}) => {
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  ///////////////////////
   const ToggleNavCart = () => {
     setNavCart(!navCart);
   }

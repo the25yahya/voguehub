@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { FaChevronDown } from "react-icons/fa";
 import '../App.css'
 import { IoIosSearch } from "react-icons/io";
@@ -30,8 +30,32 @@ const Navbar = () => {
     setProductsNav(false);
     setShop(false);
    }
+   ///////////////////////////////////
+   const [scrolling, setScrolling] = useState(false);
+
+   useEffect(() => {
+     const handleScroll = () => {
+       if (window.scrollY > 0) {
+         setScrolling(true);
+       } else {
+         setScrolling(false);
+       }
+     };
+ 
+     window.addEventListener('scroll', handleScroll);
+ 
+     // Cleanup the event listener on component unmount
+     return () => {
+       window.removeEventListener('scroll', handleScroll);
+     };
+   }, []); // Empty dependency array ensures the effect runs once when the component mounts
+ 
+   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 transition border-transparent border-b ${
+     scrolling ? 'bg-black' : 'bg-transparent'
+   }`;
+   
   return (
-    <nav className='fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 border-transparent border-b border-gray-100'>
+    <nav className={navbarClasses}>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
         className='relative flex items-center text-sm  navp'>
