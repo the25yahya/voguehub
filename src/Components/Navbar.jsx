@@ -101,7 +101,7 @@ const Navbar = () => {
         <h1 className='title text-3xl cursor-pointer'>VogueHUB</h1>
       </div>
       <div className='flex items-center'>
-        <p className='mr-4 text-lg font-semibold cursor-pointer'>LOGIN</p>
+        <p className='mr-4 text-lg font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
         <div className='mr-4 text-2xl font-bold cursor-pointer'><IoIosSearch/></div>
         <div className='mr-4 text-xl cursor-pointer'><FaRegHeart/></div>
         <div onClick={ToggleNavCart} className='mr-4 text-xl cursor-pointer'>
