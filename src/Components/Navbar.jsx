@@ -32,10 +32,22 @@ const Navbar = () => {
    }
    ///////////////////////////////////
    const [scrolling, setScrolling] = useState(false);
-
+   const [scrollDirection, setScrollDirection] = useState('down');
+   const [prevScrollPos, setPrevScrollPos] = useState(0);
+ 
    useEffect(() => {
      const handleScroll = () => {
-       if (window.scrollY > 0) {
+       const currentScrollPos = window.scrollY;
+ 
+       if (currentScrollPos > prevScrollPos) {
+         setScrollDirection('down');
+       } else {
+         setScrollDirection('up');
+       }
+ 
+       setPrevScrollPos(currentScrollPos);
+ 
+       if (currentScrollPos > 0) {
          setScrolling(true);
        } else {
          setScrolling(false);
@@ -48,11 +60,12 @@ const Navbar = () => {
      return () => {
        window.removeEventListener('scroll', handleScroll);
      };
-   }, []); // Empty dependency array ensures the effect runs once when the component mounts
+   }, [prevScrollPos]);
  
-   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 transition border-transparent border-b ${
-     scrolling ? 'bg-black' : 'bg-transparent'
+   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 border-transparent border-b transition ${
+     scrolling ? (scrollDirection === 'down' ? 'hidden' : 'bg-black appear-from-top') : 'bg-transparent'
    }`;
+ 
    
   return (
     <nav className={navbarClasses}>

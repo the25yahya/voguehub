@@ -100,4 +100,19 @@ nav{
     position: relative; /* Make sure the div stays in place after the animation */
     right: -100%; /* Start the div outside the left edge of its container */
   }
+  @keyframes slideInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-50vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply the animation to the div */
+  .appear-from-top {
+    animation: slideInFromTop 1s ease-out; /* You can adjust the duration and easing as needed */
+  }
   /*=======================================================================================*/
