@@ -1,12 +1,21 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import { FaRegHeart,FaHeart } from "react-icons/fa";
 const Product = (props) => {
+
+
+  const [mainImg, setMainImg] = useState(props.img1);
+  const setImg2 = () =>{
+    setMainImg(props.img2);
+  }
+  const setImg1 = () =>{
+    setMainImg(props.img1);
+  }
   return (
     <div className='m-3'>
-        <div className='relative'>
+        <div onMouseEnter={setImg2} onMouseLeave={setImg1} className='relative'>
           <img 
-            className='w-300 rounded-lg'
-            src={props.img1
+            className='w-300 rounded-lg cursor-pointer'
+            src={mainImg
             }
           />
           <div className='absolute border border-black rounded-full p-2 top-3 right-3 text-sm cursor-pointer'>
