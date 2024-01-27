@@ -2,10 +2,10 @@ import React from 'react'
 import { FaRegHeart,FaHeart } from "react-icons/fa";
 const Product = (props) => {
   return (
-    <div>
+    <div className='m-3'>
         <div className='relative'>
           <img 
-            className='w-350 rounded-lg'
+            className='w-300 rounded-lg'
             src={props.img1
             }
           />
