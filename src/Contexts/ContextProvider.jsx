@@ -11,10 +11,13 @@ const initialState = {
 
 
 export const ContextProvider = ({children}) => {
-
+  const reloadPage = () => {
+    window.location.reload();
+  };
   const [searchTerm, setSearchTerm] = useState('');
   const [shop, setShop] = useState(false);
   const [navCart, setNavCart] = useState(false);
+  const [navWishlist, setNavWishlist] = useState(false);
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -38,7 +41,7 @@ export const ContextProvider = ({children}) => {
     const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading}}
         >
             {children}
         </StateContext.Provider>

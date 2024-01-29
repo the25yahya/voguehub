@@ -11,10 +11,11 @@ import NavCart from './NavCart';
 import Products from './Products';
 import PagesNav from './PagesNav';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -29,6 +30,9 @@ const Navbar = () => {
     setPages(true);
     setProductsNav(false);
     setShop(false);
+   }
+   const OpenWishlist = () => {
+    setNavWishlist(true);
    }
    ///////////////////////////////////
    const [scrolling, setScrolling] = useState(false);
@@ -62,7 +66,7 @@ const Navbar = () => {
      };
    }, [prevScrollPos]);
  
-   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-8 border-transparent border-b transition ${
+   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition ${
      scrolling ? (scrollDirection === 'down' ? 'hidden' : 'bg-black appear-from-top') : 'bg-transparent'
    }`;
  
@@ -94,17 +98,17 @@ const Navbar = () => {
       ) : null}
         </div>
         <div className='relative flex items-center text-sm navp'>
-          <span className='mr-1 font-semibold'>BLOG</span>
+          <Link to='/Blog'><span className='mr-1 font-semibold'>BLOG</span></Link>
         </div>
       </div>
-      <div className='mr-0 sm:mr-48'>
+      <div onClick={reloadPage} className='mr-0 sm:mr-48'>
         <h1 className='title text-3xl cursor-pointer'>VogueHUB</h1>
       </div>
       <div className='flex items-center'>
-        <p className='mr-4 text-lg font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
-        <div className='mr-4 text-2xl font-bold cursor-pointer'><IoIosSearch/></div>
-        <div className='mr-4 text-xl cursor-pointer'><FaRegHeart/></div>
-        <div onClick={ToggleNavCart} className='mr-4 text-xl cursor-pointer'>
+        <p className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
+        <div className='mr-3 text-xl font-bold cursor-pointer'><IoIosSearch/></div>
+        <div onClick={OpenWishlist} className='mr-3 cursor-pointer text-lg'><FaRegHeart/></div>
+        <div onClick={ToggleNavCart} className='mr-3 text-lg cursor-pointer'>
         <HiOutlineShoppingBag/>
         {navCart ? (
             <NavCart />
