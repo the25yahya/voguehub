@@ -41,7 +41,7 @@ export const ContextProvider = ({children}) => {
     const [homeImg,setHomeImg] = useState('hero');
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist}}
         >
             {children}
         </StateContext.Provider>

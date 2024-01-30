@@ -10,6 +10,7 @@ import { useStateContext } from '../Contexts/ContextProvider';
 import NavCart from './NavCart';
 import Products from './Products';
 import PagesNav from './PagesNav';
+import { Tooltip } from '@chakra-ui/react'
 import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
 
@@ -107,13 +108,15 @@ const Navbar = () => {
       <div className='flex items-center'>
         <p className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
         <div className='mr-3 text-xl font-bold cursor-pointer'><IoIosSearch/></div>
-        <div onClick={OpenWishlist} className='mr-3 cursor-pointer text-lg'><FaRegHeart/></div>
+        <Tooltip label='wishlist'><div onClick={OpenWishlist} className='mr-3 cursor-pointer text-lg'><FaRegHeart/></div></Tooltip>
+        <Tooltip label='cart'>
         <div onClick={ToggleNavCart} className='mr-3 text-lg cursor-pointer'>
-        <HiOutlineShoppingBag/>
+         <HiOutlineShoppingBag/>
         {navCart ? (
             <NavCart />
       ) : null}
         </div>
+        </Tooltip>
         <div onClick={ToggleSidebar} className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu />
         {sidebar ? (
             <Sidebar />

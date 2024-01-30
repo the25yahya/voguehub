@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStateContext } from '../Contexts/ContextProvider'
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
 
@@ -13,17 +14,17 @@ const Shop = () => {
             <h2 className='text-xl mb-3'>Shop List</h2>
             <p>Categories</p>
             <p>Slider</p>
-            <p>All Products</p>
-            <p>Men Products</p>
-            <p>Women Products</p>
-            <p>Kids Products</p>
+            <Link to='/Allproducts'><p>All Products</p></Link>
+            <Link to='/Men'><p>Men Products</p></Link>
+            <Link to='/Women'><p>Women Products</p></Link>
+            <Link to='/Kids'><p>Kids Products</p></Link>
         </div>
         <div className='flex flex-col layout'>
             <h2 className='text-xl mb-3'>Shop Pages</h2>
-            <p>View Cart</p>
-            <p>Checkout</p>
+            <Link to='/Cart'><p>View Cart</p></Link>
+            <Link to='/Checkout'><p>Checkout</p></Link>
             <p>My Account</p>
-            <p>Wishlist</p>
+            <Link to='/Wishlist'><p>Wishlist</p></Link>
         </div>
         <div>
             <h2 className='text-xl mb-3'>New collections</h2>
