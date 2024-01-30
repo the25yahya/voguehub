@@ -95,10 +95,23 @@ nav{
       right: 0; /* Ending position (inside the container) */
     }
   }
+  @keyframes slideFromLeft {
+    0% {
+      left: -30%; /* Starting position (outside the container) */
+    }
+    100% {
+      left: 0; /* Ending position (inside the container) */
+    }
+  }
   .slide-right {
     animation: slideFromRight .5s ease-out forwards;
     position: relative; /* Make sure the div stays in place after the animation */
     right: -100%; /* Start the div outside the left edge of its container */
+  }
+  .slide-left {
+    animation: slideFromLeft 1s ease-out forwards;
+    position: relative; /* Make sure the div stays in place after the animation */
+    left: -100%; /* Start the div outside the left edge of its container */
   }
   @keyframes slideInFromTop {
     0% {
@@ -114,6 +127,25 @@ nav{
   /* Apply the animation to the div */
   .appear-from-top {
     animation: slideInFromTop 1s ease-out; /* You can adjust the duration and easing as needed */
+  }
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .pulsating-element {
+    display: inline-block;
+    animation: pulsate 2s infinite; /* Adjust the duration as needed */
   }
   /*=======================================================================================*/
   /*loader=============================*/

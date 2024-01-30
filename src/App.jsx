@@ -15,7 +15,7 @@ const App = () => {
     <ChakraProvider>
       <BrowserRouter>
       {loading ? <Loader /> : 
-      <div className='relative'>
+      <div>
       <NavWishlist />
       <Navbar />
        <Routes>

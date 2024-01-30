@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -34,6 +34,7 @@ const Navbar = () => {
    }
    const OpenWishlist = () => {
     setNavWishlist(true);
+    scrollToTop();
    }
    ///////////////////////////////////
    const [scrolling, setScrolling] = useState(false);
