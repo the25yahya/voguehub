@@ -6,12 +6,14 @@
 /*=======================================*/
 /*general css*/
 .hero-container {
+  height: fit-content;
+}
+.herodiv{
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
-  width:100%;
-  height: fit-content;
-  padding-bottom: 150px;
-  overflow: hidden;
+  animation: zoomAnimation 4s infinite alternate; /* Adjust the duration as needed */
 }
 nav{
 
