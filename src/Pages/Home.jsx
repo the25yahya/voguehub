@@ -4,6 +4,9 @@ import { useStateContext } from '../Contexts/ContextProvider'
 import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 import WinterCollection from '../Components/WinterCollection';
 import FeaturedCollection from '../Components/FeaturedCollection';
+import Categories from '../Components/Categories';
+
+
 const Home = () => {
   const {homeImg,setHomeImg,navCart} = useStateContext();
   const setImg1 = () =>{
@@ -27,6 +30,7 @@ const Home = () => {
       </div>
       <WinterCollection/>
       <FeaturedCollection />
+      <Categories />
     </div>
     
   )
