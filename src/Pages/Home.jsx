@@ -2,9 +2,8 @@ import React from 'react'
 import '../App.css'
 import { useStateContext } from '../Contexts/ContextProvider'
 import { GoChevronRight, GoChevronLeft } from "react-icons/go";
-import WinterCollection from '../Data/WinterCollection.json'
-import Product from '../Components/Product';
-
+import WinterCollection from '../Components/WinterCollection';
+import FeaturedCollection from '../Components/FeaturedCollection';
 const Home = () => {
   const {homeImg,setHomeImg,navCart} = useStateContext();
   const setImg1 = () =>{
@@ -14,22 +13,6 @@ const Home = () => {
     setHomeImg('hero2')
   }
   ////////////////////////////
-  const WinterProducts = WinterCollection.map((item) =>{
-    return(
-      <Product 
-        key={item.name}
-        name={item.name}
-        img1={item.img1}
-        img2={item.img2}
-        img3={item.img3}
-        img4={item.img4}
-        img5={item.img5}
-        price={item.price}
-        description={item.description}
-        tag={item.tag}
-      />
-    )
-  })
   return (
     <div className={navCart ? 'brightness-50 transition' : ''}>
       <div className={`relative overflow-hidden hero-container`}>
@@ -42,14 +25,8 @@ const Home = () => {
         <div onClick={setImg1} className='absolute text-white top-1/2 text-6xl z-30 opacity-50 left-5 cursor-pointer'><GoChevronLeft/></div>
        </section>
       </div>
-      <div className='flex flex-col items-center mt-20'>
-        <h2 className='text-4xl font-semibold'>Winter Collection</h2>
-        <p className='font-mono text-gray-400 font-semibold mt-1 text-sm sm:text-base'>Let us love winter for it is the spring of genius</p>
-        <div className='mt-10 flex flex-wrap justify-center'>    
-         {WinterProducts}
-         <button className='my-4 bg-black px-4 py-1 text-white font-mono rounded-lg transition hover:bg-transparent hover:text-black'>Load More Products</button>
-        </div>
-      </div>
+      <WinterCollection/>
+      <FeaturedCollection />
     </div>
     
   )

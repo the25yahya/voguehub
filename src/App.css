@@ -5,12 +5,15 @@
 }
 /*=======================================*/
 /*general css*/
+.grayscale {
+  filter: grayscale(100%);
+}
 .hero-container {
   height: fit-content;
 }
 .herodiv{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   animation: zoomAnimation 4s infinite alternate; /* Adjust the duration as needed */
