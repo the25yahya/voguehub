@@ -8,6 +8,7 @@ import { useStateContext } from './Contexts/ContextProvider.jsx';
 import './Components/Loader'
 import Loader from './Components/Loader';
 import NavWishlist from './Components/NavWishlist.jsx';
+import Login from './Components/Login.jsx';
 
 const App = () => {
   const {loading} = useStateContext();
@@ -17,6 +18,7 @@ const App = () => {
       {loading ? <Loader /> : 
       <div>
       <NavWishlist />
+      <Login />
       <Navbar />
        <Routes>
         <Route path='/' element = { <Home /> } />
