@@ -5,6 +5,19 @@
 }
 /*=======================================*/
 /*general css*/
+/* ScrollAnimationComponent.css */
+
+.animate-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .grayscale {
   filter: grayscale(100%);
 }

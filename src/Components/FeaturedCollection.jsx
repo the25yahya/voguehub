@@ -1,8 +1,11 @@
 import React from 'react'
+import { useStateContext } from '../Contexts/ContextProvider'
+
 
 const FeaturedCollection = () => {
+    const { isAnimated2} = useStateContext();
   return (
-    <div className='mt-50'>
+    <div className={`mt-50 animate-element animated2 ${isAnimated2 ? 'animated' : ''}`}>
         <div className='flex flex-col text-center'>
             <h1 className='text-4xl font-semibold'>Featured Collections</h1>
             <p className='font-mono text-gray-600 mb-10 mt-3'>TOP NEW COLLECTIONS WITH HARFA BRANDS EXPLORE NOW</p>
