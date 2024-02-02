@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { useStateContext } from '../Contexts/ContextProvider';
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
+  const { scrollToTop } = useStateContext();
   return (
     <footer className='mt-50'>
       <div className='flex justify-between clear-start px-8 mb-20 flex-wrap'>
@@ -43,6 +45,7 @@ const Footer = () => {
       <div className='flex items-center bg-black justify-between text-white px-8 py-8 text-sm'>
         <p className='font-semibold'>&copy; 2024 ALL RIGHTS RESERVED</p>
         <div className='flex justify-center'>
+          <p onClick={scrollToTop} className='text-sm font-bold mr-5 cursor-pointer'>VOGUEHUB</p>
           <span className='text-lg mx-4'><FaFacebook/></span>
           <span className='text-lg mx-4'><FaInstagram/></span>
           <span className='text-lg mx-4'><FaXTwitter/></span>
