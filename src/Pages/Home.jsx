@@ -17,7 +17,7 @@ const Home = () => {
   }
   ////////////////////////////
   return (
-    <div className={navCart ? 'brightness-50 transition' : ''}>
+    <div className='transition'>
       <div className={`relative overflow-hidden hero-container`}>
       <div className={`herodiv -z-10 absolute overflow-hidden ${homeImg === 'hero' ? 'bg-hero' : 'bg-hero2'}`}></div>
       <section className='z-20 text-white  w-full flex flex-col text-center items-center pb-10 hero mt-100 mb-50 relative slide-left fade-in'>

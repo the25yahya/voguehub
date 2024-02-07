@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const NavWishlist = () => {
-    const {navWishlist,setNavWishlist} = useStateContext();
+    const {navWishlist,setNavWishlist,wishlist} = useStateContext();
     const CloseWishlist = () =>{
         setNavWishlist(false);
     }

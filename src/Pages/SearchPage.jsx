@@ -19,7 +19,7 @@ const SearchPage = () => {
       </div>
       <div className='mt-12 w-full flex flex-col justify-center items-center'>
         <h2 className='font-semibold text-3xl'>Popular Products</h2>
-        <div className='flex mt-5'>{PopularProducts}</div>
+        <div className='flex items-center mt-5 flex-wrap justify-center'>{PopularProducts}</div>
       </div>
     </div>
   )

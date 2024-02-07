@@ -17,6 +17,8 @@ export const ContextProvider = ({children}) => {
     window.location.reload();
   };
   const [searchTerm, setSearchTerm] = useState('');
+  const [cartItems, setCartItems] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
   const [shop, setShop] = useState(false);
   const [navCart, setNavCart] = useState(false);
   const [navWishlist, setNavWishlist] = useState(false);
@@ -138,7 +140,7 @@ export const ContextProvider = ({children}) => {
     })
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,cartItems,wishlist,setCartItems,setWishlist}}
         >
             {children}
         </StateContext.Provider>
