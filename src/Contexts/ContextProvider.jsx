@@ -2,7 +2,9 @@ import React, {createContext, useContext, useState, useEffect, useReducer} from 
 import PropTypes from "prop-types"
 const StateContext = createContext();
 import Product from "../Components/Product";
+import Product2 from "../Components/Product2";
 import WinterCollection from '../Data/WinterCollection.json'
+import PopularCollection from '../Data/PopularProducts.json'
 
 const initialState = {
     cart : false,
@@ -96,6 +98,7 @@ export const ContextProvider = ({children}) => {
     const [isSearchPageOpen, setIsSearchPageOpen] = useState(false);
     const SearchOpen = () => {
       setIsSearchPageOpen(true);
+      scrollToTop();
     }
     const SearchClose = () => {
       setIsSearchPageOpen(false);
@@ -117,9 +120,25 @@ export const ContextProvider = ({children}) => {
         />
       )
     })
+    const PopularProducts = PopularCollection.map((item) =>{
+      return(
+        <Product2 
+          key={item.name}
+          name={item.name}
+          img1={item.img1}
+          img2={item.img2}
+          img3={item.img3}
+          img4={item.img4}
+          img5={item.img5}
+          price={item.price}
+          description={item.description}
+          tag={item.tag}
+        />
+      )
+    })
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts}}
         >
             {children}
         </StateContext.Provider>
