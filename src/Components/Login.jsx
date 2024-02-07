@@ -1,11 +1,13 @@
 import React from 'react'
 import { TiDelete } from "react-icons/ti";
+import { useStateContext } from '../Contexts/ContextProvider';
 
 const Login = () => {
+  const {login,CloseLogin} = useStateContext();
   return (
-    <div className='absolute top-100 w-full flex justify-center z-50 shadow-xl hidden'>
+    <div className={`absolute top-100 w-full justify-center z-50 shadow-5xl ${login ? 'flex appear-from-top' : 'hidden'}`}>
       <div className='flex flex-col text-center items-start absolute bg-white w-fit p-5 pb-12 pt-8'>
-      <div className='absolute top-2 right-2 text-2xl cursor-pointer'><TiDelete /></div>
+      <div onClick={CloseLogin} className='absolute top-2 right-2 text-2xl cursor-pointer'><TiDelete /></div>
       <h2 className='mb-3 text-2xl font-semibold'>Log in</h2>
       <input className='border border-black text-black mb-2 p-2' placeholder='Email/User' />
       <input className='border border-black text-black mb-2 p-2' placeholder='Password' />

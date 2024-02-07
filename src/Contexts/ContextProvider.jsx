@@ -18,6 +18,7 @@ export const ContextProvider = ({children}) => {
   const [shop, setShop] = useState(false);
   const [navCart, setNavCart] = useState(false);
   const [navWishlist, setNavWishlist] = useState(false);
+  const [login, setLogin] = useState(false);
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -30,6 +31,13 @@ export const ContextProvider = ({children}) => {
   }
   const ToggleSidebar = () => {
     setSidebar(!sidebar)
+  }
+  const OpenLogin = () => {
+    setLogin(true);
+    scrollToTop();
+  }
+  const CloseLogin = () => {
+    setLogin(false);
   }
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
@@ -84,6 +92,15 @@ export const ContextProvider = ({children}) => {
       })}
     const [homeImg,setHomeImg] = useState('hero');
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////keeping track of search page
+    const [isSearchPageOpen, setIsSearchPageOpen] = useState(false);
+    const SearchOpen = () => {
+      setIsSearchPageOpen(true);
+    }
+    const SearchClose = () => {
+      setIsSearchPageOpen(false);
+    }
+    ///////////////////////////////////////////////////////////////////////////////////
     const WinterProducts = WinterCollection.map((item) =>{
       return(
         <Product 
@@ -102,7 +119,7 @@ export const ContextProvider = ({children}) => {
     })
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen}}
         >
             {children}
         </StateContext.Provider>

@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,isSearchPageOpen,SearchOpen} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -69,8 +69,9 @@ const Navbar = () => {
    }, [prevScrollPos]);
  
    const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition ${
-     scrolling ? (scrollDirection === 'down' ? 'hidden' : 'bg-black appear-from-top') : 'bg-transparent'
-   }`;
+    (scrolling && scrollDirection === 'down') || isSearchPageOpen ? 'hidden' : scrolling ? 'bg-black appear-from-top' : 'bg-transparent'
+  }`;
+  
  
    
   return (
@@ -107,8 +108,8 @@ const Navbar = () => {
         <h1 className='title text-3xl cursor-pointer'>VogueHUB</h1>
       </div>
       <div className='flex items-center'>
-        <p className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
-        <div className='mr-3 text-xl font-bold cursor-pointer'><IoIosSearch/></div>
+        <p onClick={OpenLogin} className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
+        <Link to='/Search' ><div onClick={SearchOpen} className='mr-3 text-xl font-bold cursor-pointer'><IoIosSearch/></div></Link>
         <Tooltip label='wishlist'><div onClick={OpenWishlist} className='mr-3 cursor-pointer text-lg'><FaRegHeart/></div></Tooltip>
         <Tooltip label='cart'>
         <div onClick={ToggleNavCart} className='mr-3 text-lg cursor-pointer'>
