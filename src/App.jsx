@@ -9,6 +9,7 @@ import './Components/Loader'
 import Loader from './Components/Loader';
 import NavWishlist from './Components/NavWishlist.jsx';
 import Login from './Components/Login.jsx';
+import Register from './Components/Register.jsx';
 
 const App = () => {
   const {loading} = useStateContext();
@@ -19,6 +20,7 @@ const App = () => {
       <div>
       <NavWishlist />
       <Login />
+      <Register />
       <Navbar />
        <Routes>
         <Route path='/' element = { <Home /> } />

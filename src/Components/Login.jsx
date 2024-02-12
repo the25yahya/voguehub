@@ -3,7 +3,11 @@ import { TiDelete } from "react-icons/ti";
 import { useStateContext } from '../Contexts/ContextProvider';
 
 const Login = () => {
-  const {login,CloseLogin} = useStateContext();
+  const {login,CloseLogin,register, setRegister} = useStateContext();
+  const RegisterFunc = () =>{
+    CloseLogin();
+    setRegister(true);
+  }
   return (
     <div className={`absolute top-100 w-full justify-center z-50 shadow-5xl ${login ? 'flex appear-from-top' : 'hidden'}`}>
       <div className='flex flex-col text-center items-start absolute bg-white w-fit p-5 pb-12 pt-8'>
@@ -19,7 +23,7 @@ const Login = () => {
        <p className='ml-4 underline'>FORGOT PASSWORD</p>
       </div>
       <button className='bg-black px-6 py-2 text-sm text-white mt-2 ml-5 w-200'>LOGIN</button>
-      <p className='w-full mt-2 text-sm font-semibold cursor-pointer'>REGISTER</p>
+      <p onClick={RegisterFunc} className='w-full mt-2 text-sm font-semibold cursor-pointer'>REGISTER</p>
      </div>
     </div>
   )
