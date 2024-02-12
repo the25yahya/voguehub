@@ -141,10 +141,22 @@ nav{
       transform: translateY(0);
     }
   }
-  
+  @keyframes slideInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(5vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   /* Apply the animation to the div */
   .appear-from-top {
     animation: slideInFromTop 1s ease-out; /* You can adjust the duration and easing as needed */
+  }
+  .appear-from-bottom {
+    animation: slideInFromBottom .3s ease-out; /* You can adjust the duration and easing as needed */
   }
   @keyframes pulsate {
     0% {
