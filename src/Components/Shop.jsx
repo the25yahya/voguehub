@@ -12,8 +12,6 @@ const Shop = () => {
     <div onMouseLeave={CloseShop} className='flex justify-around shadow-xl px-5 py-5 absolute -bottom-150 -left-10 bg-white w-1000 text-black fade-in'>
         <div className='flex flex-col justify-start layout'>
             <h2 className='text-xl mb-3'>Shop List</h2>
-            <p>Categories</p>
-            <p>Slider</p>
             <Link to='/Allproducts'><p>All Products</p></Link>
             <Link to='/Men'><p>Men Products</p></Link>
             <Link to='/Women'><p>Women Products</p></Link>

@@ -72,6 +72,7 @@ const Navbar = () => {
     (scrolling && scrollDirection === 'down') || isSearchPageOpen ? 'hidden' : scrolling ? 'bg-black appear-from-top' : 'bg-transparent'
   }`;
   
+
  
    
   return (

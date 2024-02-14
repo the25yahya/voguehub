@@ -5,7 +5,7 @@ const Men = () => {
   const {MenProducts} = useStateContext();
   return (
     <div className='pt-50'>
-      <div className='flex px-10'>{MenProducts}</div>
+      <div className='flex pl-28 flex-wrap w-full'>{MenProducts}</div>
     </div>
   )
 }
