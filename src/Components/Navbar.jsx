@@ -14,9 +14,9 @@ import { Tooltip } from '@chakra-ui/react'
 import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,isSearchPageOpen,SearchOpen} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,SearchOpen} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -37,46 +37,8 @@ const Navbar = () => {
     scrollToTop();
    }
    ///////////////////////////////////
-   const [scrolling, setScrolling] = useState(false);
-   const [scrollDirection, setScrollDirection] = useState('down');
-   const [prevScrollPos, setPrevScrollPos] = useState(0);
- 
-   useEffect(() => {
-     const handleScroll = () => {
-       const currentScrollPos = window.scrollY;
- 
-       if (currentScrollPos > prevScrollPos) {
-         setScrollDirection('down');
-       } else {
-         setScrollDirection('up');
-       }
- 
-       setPrevScrollPos(currentScrollPos);
- 
-       if (currentScrollPos > 0) {
-         setScrolling(true);
-       } else {
-         setScrolling(false);
-       }
-     };
- 
-     window.addEventListener('scroll', handleScroll);
- 
-     // Cleanup the event listener on component unmount
-     return () => {
-       window.removeEventListener('scroll', handleScroll);
-     };
-   }, [prevScrollPos]);
- 
-   const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition ${
-    (scrolling && scrollDirection === 'down') || isSearchPageOpen ? 'hidden' : scrolling ? 'bg-black appear-from-top' : 'bg-transparent'
-  }`;
-  
-
- 
-   
   return (
-    <nav className={navbarClasses}>
+    <nav className={props.navbarClasses}>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
         className='relative flex items-center text-sm  navp'>
@@ -106,7 +68,7 @@ const Navbar = () => {
         </div>
       </div>
       <div onClick={reloadPage} className='mr-0 sm:mr-48'>
-        <h1 className='title text-3xl cursor-pointer'>VogueHUB</h1>
+        <Link to='/'><h1 className='title text-3xl cursor-pointer'>VogueHUB</h1></Link>
       </div>
       <div className='flex items-center'>
         <p onClick={OpenLogin} className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>

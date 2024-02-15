@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import '../App.css'
 import { useStateContext } from '../Contexts/ContextProvider'
 import { GoChevronRight, GoChevronLeft } from "react-icons/go";
@@ -8,17 +8,53 @@ import Categories from '../Components/Categories';
 import Navbar from '../Components/Navbar';
 
 const Home = () => {
-  const {homeImg,setHomeImg,navCart} = useStateContext();
+  const {homeImg,setHomeImg,navCart,isSearchPageOpen} = useStateContext();
   const setImg1 = () =>{
     setHomeImg('hero')
   }
   const setImg2 = () =>{
     setHomeImg('hero2')
   }
-  ////////////////////////////
+  /////////////////////////////////////////////////////////////
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState('down');
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos > prevScrollPos) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+
+      setPrevScrollPos(currentScrollPos);
+
+      if (currentScrollPos > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
+
+  const navbarClasses = `fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition ${
+   (scrolling && scrollDirection === 'down') || isSearchPageOpen ? 'hidden' : scrolling ? 'bg-black appear-from-top' : 'bg-transparent'
+ }`;
   return (
     <div className='transition'>
-      <Navbar />
+      <Navbar 
+        navbarClasses={navbarClasses}
+      />
       <div className={`relative overflow-hidden hero-container`}>
       <div className={`herodiv -z-10 absolute overflow-hidden ${homeImg === 'hero' ? 'bg-hero' : 'bg-hero2'}`}></div>
       <section className='z-20 text-white  w-full flex flex-col text-center items-center pb-10 hero mt-100 mb-50 relative slide-left fade-in'>
