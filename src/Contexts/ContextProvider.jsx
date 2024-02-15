@@ -31,9 +31,6 @@ export const ContextProvider = ({children}) => {
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(false);
-  const [isAnimated2, setIsAnimated2] = useState(false);
-  const [isAnimated3, setIsAnimated3] = useState(false);
   ///////////////////////
   const ToggleNavCart = () => {
     setNavCart(!navCart);
@@ -57,42 +54,6 @@ export const ContextProvider = ({children}) => {
         setLoading(false);
       }, 2500);
     }, []);
-    useEffect(() => {
-      const handleScroll = () => {
-          const element = document.querySelector('.animated1');
-          const position = element.getBoundingClientRect().top;
-          const threshold = window.innerHeight * 0.8;
-
-          if (position < threshold) {
-              setIsAnimated(true);
-          }
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      // Cleanup the event listener on component unmount
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
-  }, []);
-  useEffect(() => {
-    const handleScroll2 = () => {
-        const element = document.querySelector('.animated2');
-        const position = element.getBoundingClientRect().top;
-        const threshold = window.innerHeight * 0.8;
-
-        if (position < threshold) {
-            setIsAnimated2(true);
-        }
-    };
-
-    window.addEventListener('scroll', handleScroll2);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-        window.removeEventListener('scroll', handleScroll2);
-    };
-}, []);
     /////////////////////////////////
     const scrollToTop = () => {
       window.scrollTo({
@@ -209,7 +170,7 @@ export const ContextProvider = ({children}) => {
     })
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,isAnimated, setIsAnimated,isAnimated2, setIsAnimated2,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,cartItems,wishlist,setCartItems,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,cartItems,wishlist,setCartItems,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts}}
         >
             {children}
         </StateContext.Provider>

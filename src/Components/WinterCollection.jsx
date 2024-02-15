@@ -1,8 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useStateContext } from '../Contexts/ContextProvider'
 
 const WinterCollection = () => {
-    const { WinterProducts,isAnimated} = useStateContext();
+    const { WinterProducts} = useStateContext();
+    const [isAnimated, setIsAnimated] = useState(false);
+    useEffect(() => {
+      const handleScroll = () => {
+          const element = document.querySelector('.animated1');
+          const position = element.getBoundingClientRect().top;
+          const threshold = window.innerHeight * 0.8;
+
+          if (position < threshold) {
+              setIsAnimated(true);
+          }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      // Cleanup the event listener on component unmount
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
   return (
     <div className={`flex flex-col items-center mt-20 animate-element animated1 ${isAnimated ? 'animated' : ''}`}>
     <h2 className='text-4xl font-semibold'>Winter Collection</h2>

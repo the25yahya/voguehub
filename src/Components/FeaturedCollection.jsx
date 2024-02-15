@@ -1,9 +1,25 @@
-import React from 'react'
-import { useStateContext } from '../Contexts/ContextProvider'
-
+import React,{useState} from 'react'
 
 const FeaturedCollection = () => {
-    const { isAnimated2} = useStateContext();
+    const [isAnimated2, setIsAnimated2] = useState(false);
+    useEffect(() => {
+        const handleScroll2 = () => {
+            const element = document.querySelector('.animated2');
+            const position = element.getBoundingClientRect().top;
+            const threshold = window.innerHeight * 0.8;
+    
+            if (position < threshold) {
+                setIsAnimated2(true);
+            }
+        };
+    
+        window.addEventListener('scroll', handleScroll2);
+    
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll2);
+        };
+    }, []);
   return (
     <div className={`mt-50 animate-element animated2 ${isAnimated2 ? 'animated' : ''}`}>
         <div className='flex flex-col text-center'>
