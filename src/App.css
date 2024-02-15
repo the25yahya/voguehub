@@ -53,7 +53,7 @@ nav{
     display: flex; 
     align-items: center;
     margin: 0px 12px 0px 12px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
 }
 .navigation .navp::before {

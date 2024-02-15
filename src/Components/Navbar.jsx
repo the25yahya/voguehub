@@ -41,7 +41,7 @@ const Navbar = (props) => {
     <nav className={props.navbarClasses}>
       <div className='hidden navigation lg:flex cursor-pointer'>
         <div onMouseEnter={OpenShop}      
-        className='relative flex items-center text-sm  navp'>
+        className='relative flex items-center text-sm navp'>
           <span className='mr-1 font-semibold'>SHOP</span>
           <span className='mr-3'><FaChevronDown /></span>
           {shop ? (
