@@ -16,7 +16,6 @@ const Cart = () => {
         <div className='mt-24 w-full px-20'>
         <p className='flex items-center'>
          <span className='flex items-center'>Home<FaAngleRight/></span>
-         <span className='flex items-center'>Shop<FaAngleRight/></span>
          <span>Cart</span>
         </p>
         <div className='flex items-center border border-black bg-gray-100 px-5 py-2 mb-5 ml-20 mt-12'>
