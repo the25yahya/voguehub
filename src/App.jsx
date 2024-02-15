@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import { Home, SearchPage, Blog, Men, Women, AllProducts, Kids, Wishlist, Cart, BestSellers, NewArrivals} from './Pages/index.jsx';
+import { Home, SearchPage, Blog, Men, Women, AllProducts, Kids, Wishlist, Cart, BestSellers, NewArrivals, User} from './Pages/index.jsx';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { useStateContext } from './Contexts/ContextProvider.jsx';
@@ -23,6 +23,7 @@ const App = () => {
       <Register />
        <Routes>
         <Route path='/' element = { <Home /> } />
+        <Route path='/MyAccount' element = { <User /> } />
         <Route path='/Blog' element = { <Blog /> } />
         <Route path='/Search' element = { <SearchPage /> } />
         <Route path='/NewArrivals' element = { <NewArrivals /> } />

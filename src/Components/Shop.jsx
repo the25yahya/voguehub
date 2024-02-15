@@ -21,7 +21,7 @@ const Shop = () => {
             <h2 className='text-xl mb-3'>Shop Pages</h2>
             <Link to='/Cart'><p>View Cart</p></Link>
             <Link to='/Checkout'><p>Checkout</p></Link>
-            <p>My Account</p>
+            <Link to='/MyAccount'><p>My Account</p></Link>
             <Link to='/Wishlist'><p>Wishlist</p></Link>
         </div>
         <div>

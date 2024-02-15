@@ -1,4 +1,5 @@
 export { default as Home } from './Home';
+export { default as User } from './User';
 export { default as SearchPage } from './SearchPage';
 export { default as Blog } from './Blog'
 export { default as Cart } from './Cart'
