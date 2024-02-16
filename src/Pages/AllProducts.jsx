@@ -15,12 +15,12 @@ const AllProducts = () => {
         navbarClasses='fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition bg-black shadow-2xl'
       />
       <div className='mt-24 flex flex-col items-start relative'>
-        <p className='flex items-center ml-5'>
+        <p className='flex items-center ml-5 text-sm'>
          <Link to='/'><span className='flex items-center cursor-pointer'>Home<FaAngleRight/></span></Link>
          <span>All Products</span>
         </p>
         <div className='flex justify-between w-full px-32 mt-12'>
-         <div className='flex items-center'>
+         <div className='flex items-center text-sm'>
           <p className='mr-1'><LuSettings2 /></p>
           <p>FILTERS</p>
          </div>
