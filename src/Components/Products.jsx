@@ -29,11 +29,14 @@ const Products = () => {
     <div onMouseLeave={CloseProducts} className='flex justify-around shadow-xl px-5 py-5 absolute -bottom-300 -left-40 bg-white w-1000 text-black fade-in'>
         <div>
             <h2 className='text-3xl mb-3'>Our Products</h2>
-            <Link to='/Men'><p className='hover:opacity-45 transition text-sm font-semibold my-2 '>Men Products</p></Link>
-            <Link to='/Women'><p className='hover:opacity-45 transition text-sm font-semibold my-2 '>Women Products</p></Link>
-            <Link to='/Kids'><p className='hover:opacity-45 transition text-sm font-semibold my-2 '>Kids Products</p></Link>
-            <Link to='/NewArrivals'><p className='hover:opacity-45 transition text-sm font-semibold my-2 '>New Arrivals</p></Link>
-            <Link to='/BestSellers'><p className='hover:opacity-45 transition text-sm font-semibold my-2  '>Best Sellers</p></Link>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Hoodies</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>T-shirts</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Sneakers</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Pants</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Dresses</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Outwear</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Jackets</p>
+            <p className='my-1 font-semibold hover:opacity-50 cursor-pointer transition'>Bags</p>
         </div>
         <div>
             <h2 className='text-xl mb-3 font-semibold'>Hot Items</h2>
