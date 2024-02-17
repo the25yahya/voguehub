@@ -6,8 +6,8 @@ import { FaAngleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const {cartItems} = useStateContext();
-  if (cartItems.length === 0){
+  const {state} = useStateContext();
+  if (state.cart.length === 0){
     return (
       <div className='flex flex-col items-center'>
         <Navbar 
@@ -26,7 +26,7 @@ const Cart = () => {
         </div>
       </div>
     )
-  } else if (cartItems.length > 0){
+  } else if (state.cart.length > 0){
     return (
       <div>working</div>
     )

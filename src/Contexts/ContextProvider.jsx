@@ -21,7 +21,6 @@ export const ContextProvider = ({children}) => {
     window.location.reload();
   };
   const [searchTerm, setSearchTerm] = useState('');
-  const [cartItems, setCartItems] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [shop, setShop] = useState(false);
   const [navCart, setNavCart] = useState(false);
@@ -168,9 +167,28 @@ export const ContextProvider = ({children}) => {
         />
       )
     })
+    ////////////////////cart reducer////////////////////////////////
+    const cartReducer = ( state, action ) =>{
+      switch(action.type){
+        case 'ADD_TO_CART' :{
+          const updatedCart = [...state.cart,action.payload];
+          const updatedSubtotal = updatedCart.reduce((sum,item) =>sum + item.price, 0);
+           return{
+            ...state, cart: updatedCart,
+            subtotal : updatedSubtotal,
+           };}
+      }
+    }
+
+    const cartInitialState = {
+      cart:[],
+      subtotal:0,
+    }
+    const [state, dispatch] = useReducer(cartReducer,cartInitialState)
+    ////////////////////////////////////////////////////
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,cartItems,wishlist,setCartItems,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch}}
         >
             {children}
         </StateContext.Provider>

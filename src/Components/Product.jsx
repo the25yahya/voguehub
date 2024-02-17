@@ -25,7 +25,7 @@ const Product = (props) => {
         </div>
         <div className='flex justify-between items-center text-center mt-2 font-mono'>
             <p className='font-mono font-semibold'>{props.name}</p>
-            <p className='font-semibold'>{props.price}</p>
+            <p className='font-semibold'>{props.price}$</p>
         </div>
     </div>
   )
