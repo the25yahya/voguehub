@@ -174,17 +174,26 @@ export const ContextProvider = ({children}) => {
       )
     })
     ////////////////////cart reducer////////////////////////////////
-    const cartReducer = ( state, action ) =>{
-      switch(action.type){
-        case 'ADD_TO_CART' :{
-          const updatedCart = [...state.cart,action.payload];
-          const updatedSubtotal = updatedCart.reduce((sum,item) =>sum + item.price, 0);
-           return{
-            ...state, cart: updatedCart,
-            subtotal : updatedSubtotal,
-           };}
-      }
+  const cartReducer = ( state, action )=>{
+    switch(action.type){
+      case 'ADD_TO_CART' :{
+      const updatedCart = [...state.cart,action.payload];
+      const updatedSubtotal = updatedCart.reduce((sum,item) =>sum + item.price, 0);
+       return{
+        ...state, cart: updatedCart,
+        subtotal : updatedSubtotal,
+       };}
+      case 'REMOVE_FROM_CART' :{
+       const updatedCart = state.cart.filter(item => item.id !== action.payload);
+       const updatedSubtotal = updatedCart.reduce((sum,item) => sum + item.price,0) 
+       return{
+        ...state, cart: state.cart.filter(item => item.id !== action.payload),
+        subtotal: updatedSubtotal,
+       };}
+      default :
+      return state;
     }
+  }
 
     const cartInitialState = {
       cart:[],

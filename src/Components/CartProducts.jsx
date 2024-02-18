@@ -3,11 +3,15 @@ import Cartitem from './Cartitem'
 import { useStateContext } from '../Contexts/ContextProvider'
 
 const CartProducts = () => {
-    const {state} = useStateContext();
+    const {state,dispatch} = useStateContext();
     const AddedProducts = state.cart
     const CartItems = AddedProducts.map((item) =>{
+      const removeFromCart = () =>{
+        dispatch({type:'REMOVE_FROM_CART', payload:item.id })
+      }
         return(
             <Cartitem 
+          onClick={removeFromCart}
           key={item.name}
           name={item.name}
           img1={item.img1}
