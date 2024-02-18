@@ -83,6 +83,7 @@ export const ContextProvider = ({children}) => {
           img5={item.img5}
           price={item.price}
           description={item.description}
+          type={item.type}
           tag={item.tag}
         />
       )
@@ -99,6 +100,7 @@ export const ContextProvider = ({children}) => {
           img5={item.img5}
           price={item.price}
           description={item.description}
+          type={item.type}
           tag={item.tag}
         />
       )
@@ -115,6 +117,7 @@ export const ContextProvider = ({children}) => {
           img5={item.img5}
           price={item.price}
           description={item.description}
+          type={item.type}
           tag={item.tag}
         />
       )
@@ -131,6 +134,7 @@ export const ContextProvider = ({children}) => {
           img5={item.img5}
           price={item.price}
           description={item.description}
+          type={item.type}
           tag={item.tag}
         />
       )
@@ -147,6 +151,7 @@ export const ContextProvider = ({children}) => {
           img5={item.img5}
           price={item.price}
           description={item.description}
+          type={item.type}
           tag={item.tag}
         />
       )
@@ -164,6 +169,7 @@ export const ContextProvider = ({children}) => {
           price={item.price}
           description={item.description}
           tag={item.tag}
+          type={item.type}
         />
       )
     })

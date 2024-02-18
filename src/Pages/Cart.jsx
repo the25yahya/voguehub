@@ -4,6 +4,7 @@ import { FiAlertCircle } from "react-icons/fi";
 import Navbar from '../Components/Navbar';
 import { FaAngleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import CartProducts from '../Components/CartProducts';
 
 const Cart = () => {
   const {state} = useStateContext();
@@ -28,7 +29,14 @@ const Cart = () => {
     )
   } else if (state.cart.length > 0){
     return (
-      <div>working</div>
+      <div className='flex flex-col items-center'>
+         <Navbar 
+         navbarClasses='fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition bg-black shadow-2xl'
+        />
+        <div className='mt-50'>
+          <CartProducts />
+        </div>
+      </div>
     )
   }
 }

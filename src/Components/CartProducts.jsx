@@ -8,10 +8,17 @@ const CartProducts = () => {
     const CartItems = AddedProducts.map((item) =>{
         return(
             <Cartitem 
-            img1={item.img1}
-            key={item.name}
-            name={item.name}
-            price={item.price}
+          key={item.name}
+          name={item.name}
+          img1={item.img1}
+          img2={item.img2}
+          img3={item.img3}
+          img4={item.img4}
+          img5={item.img5}
+          price={item.price}
+          description={item.description}
+          tag={item.tag}
+          type={item.type}
             />
         )
     })
