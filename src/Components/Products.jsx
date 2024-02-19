@@ -18,6 +18,7 @@ const Products = () => {
         price={item.price}
         description={item.description}
         tag={item.tag}
+        type={item.type}
       />
     )
   }) 

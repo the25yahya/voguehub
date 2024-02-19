@@ -56,7 +56,7 @@ const Home = () => {
         navbarClasses={navbarClasses}
       />
       <div className={`relative overflow-hidden hero-container`}>
-      <div className={`herodiv -z-10 absolute overflow-hidden ${homeImg === 'hero' ? 'bg-hero' : 'bg-hero2'}`}></div>
+      <div className={`herodiv -z-10 brightness-50  absolute overflow-hidden ${homeImg === 'hero' ? 'bg-hero' : 'bg-hero2'}`}></div>
       <section className='z-20 text-white  w-full flex flex-col text-center items-center pb-10 hero mt-100 mb-50 relative slide-left fade-in'>
         <p className='mt-10 mb-2 font-mono intro text-sm sm:text-base'>In the right outfit anything is possible</p>
         <p className='text-3xl w-200 sm:text-5xl sm:w-300 md:text-7xl md:w-450 mb-10 font-semibold mainp'>Unleash Your Fashion Experience !</p>

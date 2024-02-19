@@ -2,6 +2,7 @@ import React from 'react'
 import { TiDeleteOutline } from "react-icons/ti";
 
 const Cartitem = (props) => {
+    console.log(props);
   return (
     <div className='flex items-center justify-start my-1 relative'>
         <div onClick={props.onClick} className='absolute right-0 top-1 cursor-pointer text-sm'><TiDeleteOutline/></div>

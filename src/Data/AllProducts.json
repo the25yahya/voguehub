@@ -8,7 +8,8 @@
         "img5":"",
         "price":70,
         "tag":"Best Offer",
-        "description":"Rev up your outerwear inventory with our unrivalled collection of coats and jackets for men. Whether you are looking for a heavy coat to combat the low temperatures or a lightweight jacket to stand out at your favourite festival, we've got the trendiest designs to finish off your outfit. Puffers, parkas and borg jackets are the perfect choices if you want to bundle up without sacrificing on style, and they look great when teamed up with knitwear and denim. Bombers and overcoats are beyond versatile and can turn any getup from laid-back to dapper in no time. Denim jackets can't be missing in your trans-seasonal wardrobe, whilst cagoules and coach jackets will keep out the chill while you're out and about."
+        "description":"Rev up your outerwear inventory with our unrivalled collection of coats and jackets for men. Whether you are looking for a heavy coat to combat the low temperatures or a lightweight jacket to stand out at your favourite festival, we've got the trendiest designs to finish off your outfit. Puffers, parkas and borg jackets are the perfect choices if you want to bundle up without sacrificing on style, and they look great when teamed up with knitwear and denim. Bombers and overcoats are beyond versatile and can turn any getup from laid-back to dapper in no time. Denim jackets can't be missing in your trans-seasonal wardrobe, whilst cagoules and coach jackets will keep out the chill while you're out and about.",
+        "type": "Men"
     },
     {
         "name":"EXTREME BAGGY RIGID MULTI POCKET JEANS",
@@ -19,7 +20,8 @@
         "img5":"",
         "price":45,
         "tag":"Best Seller",
-        "description":"Covering that grey area between smart and casual, jeans are always a solid option when it comes to men's outfits. Jeans are the ultimate staple in every guy's fashion line-up, and they go with just about anything to create a go-to look. Our range of men’s jeans gives you the chance to elevate your daily outfit. Whether you prefer skinny denim or you rate a loose fit more, make sure you secure your denim selects here. Dress them down with a hoodie and white trainers, or dress them up with a blazer and slip-ons."
+        "description":"Covering that grey area between smart and casual, jeans are always a solid option when it comes to men's outfits. Jeans are the ultimate staple in every guy's fashion line-up, and they go with just about anything to create a go-to look. Our range of men’s jeans gives you the chance to elevate your daily outfit. Whether you prefer skinny denim or you rate a loose fit more, make sure you secure your denim selects here. Dress them down with a hoodie and white trainers, or dress them up with a blazer and slip-ons.",
+        "type": "Men"
     },
     {
         "name":"FAUX FUR TRIM GILET",
@@ -30,8 +32,8 @@
         "img5":"",
         "price":70,
         "tag":"Best Offer",
-        "description":"It's gilet season - the perfect companion for those colder days. A padded sleeveless jacket resembling a waistcoat design, our women's gilets have got you covered this winter. Snug, sophisticated and always in style, team a fitted body warmer with a fresh crop top and high waisted mom jeans for a crisp autumnal look. Perfect for layering, grab your go-to heeled boots and faux leather trousers and slip into a shaggy faux fur gilet for snug winter wanders. Need something cosier for your off-duty days? Layer a padded style over your fave roll neck and joggers, and get ready to relax."
-
+        "description":"It's gilet season - the perfect companion for those colder days. A padded sleeveless jacket resembling a waistcoat design, our women's gilets have got you covered this winter. Snug, sophisticated and always in style, team a fitted body warmer with a fresh crop top and high waisted mom jeans for a crisp autumnal look. Perfect for layering, grab your go-to heeled boots and faux leather trousers and slip into a shaggy faux fur gilet for snug winter wanders. Need something cosier for your off-duty days? Layer a padded style over your fave roll neck and joggers, and get ready to relax.",
+        "type": "Women"
     },
     {
         "name":"FAUX FUR FLUFFY EAR MUFFS",
