@@ -10,9 +10,9 @@ import Loader from './Components/Loader';
 import NavWishlist from './Components/NavWishlist.jsx';
 import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
-
+import NavCart from './Components/NavCart.jsx';
 const App = () => {
-  const {loading} = useStateContext();
+  const {loading,navCart} = useStateContext();
   return (
     <ChakraProvider>
       <BrowserRouter>
@@ -20,6 +20,9 @@ const App = () => {
       <div>
       <NavWishlist />
       <Login />
+      {navCart ? (
+            <NavCart />
+      ) : null}
       <Register />
        <Routes>
         <Route path='/' element = { <Home /> } />

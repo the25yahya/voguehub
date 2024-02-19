@@ -184,10 +184,10 @@ export const ContextProvider = ({children}) => {
         subtotal : updatedSubtotal,
        };}
       case 'REMOVE_FROM_CART' :{
-       const updatedCart = state.cart.filter(item => item.id !== action.payload);
+       const updatedCart = state.cart.filter(item => item.name !== action.payload);
        const updatedSubtotal = updatedCart.reduce((sum,item) => sum + item.price,0) 
        return{
-        ...state, cart: state.cart.filter(item => item.id !== action.payload),
+        ...state, cart: state.cart.filter(item => item.name !== action.payload),
         subtotal: updatedSubtotal,
        };}
       default :

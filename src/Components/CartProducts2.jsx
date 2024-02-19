@@ -1,5 +1,5 @@
 import React from 'react'
-import Cartitem from './Cartitem'
+import Cartitem2 from './Cartitem2'
 import { useStateContext } from '../Contexts/ContextProvider'
 
 const CartProducts = () => {
@@ -10,7 +10,7 @@ const CartProducts = () => {
         dispatch({type:'REMOVE_FROM_CART', payload:item.name })
       }
         return(
-            <Cartitem 
+            <Cartitem2 
           onClick={removeFromCart}
           key={item.name}
           name={item.name}

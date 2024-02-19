@@ -77,9 +77,6 @@ const Navbar = (props) => {
         <Tooltip label='cart'>
         <div onClick={ToggleNavCart} className='mr-3 text-lg cursor-pointer'>
          <HiOutlineShoppingBag/>
-        {navCart ? (
-            <NavCart />
-      ) : null}
         </div>
         </Tooltip>
         <div onClick={ToggleSidebar} className='text-4xl mr-2 block lg:hidden cursor-pointer'><MdOutlineMenu />
