@@ -201,9 +201,38 @@ export const ContextProvider = ({children}) => {
     }
     const [state, dispatch] = useReducer(cartReducer,cartInitialState)
     ////////////////////////////////////////////////////
+    ////////////////////wishlist reducer////////////////////////////////
+const wishlistReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TO_WISHLIST': {
+      const updatedWishlist = [...state.wishlist, action.payload];
+      return {
+        ...state,
+        wishlist: updatedWishlist,
+      };
+    }
+    case 'REMOVE_FROM_WISHLIST': {
+      const updatedWishlist = state.wishlist.filter(item => item.name !== action.payload);
+      return {
+        ...state,
+        wishlist: updatedWishlist,
+      };
+    }
+    default:
+      return state;
+  }
+}
+
+const wishlistInitialState = {
+  wishlist: [],
+}
+
+const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, wishlistInitialState)
+/////////////////////////////////////////////////////////////////////
+
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch}}
         >
             {children}
         </StateContext.Provider>
