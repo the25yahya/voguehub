@@ -4,7 +4,6 @@ export { default as SearchPage } from './SearchPage';
 export { default as Blog } from './Blog'
 export { default as Cart } from './Cart'
 export { default as Wishlist } from './Wishlist'
-export { default as Checkout } from './Checkout'
 export { default as Men } from './Men'
 export { default as AllProducts } from './AllProducts'
 export { default as Women } from './Women'

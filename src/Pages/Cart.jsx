@@ -5,7 +5,7 @@ import Navbar from '../Components/Navbar';
 import { FaAngleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import CartProducts2 from '../Components/CartProducts2';
-
+import Checkout from '../Components/Checkout'
 
 const Cart = () => {
   const {state} = useStateContext();
@@ -30,7 +30,7 @@ const Cart = () => {
     )
   } else if (state.cart.length > 0){
     return (
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center bg-gray-100 pb-50'>
          <Navbar 
          navbarClasses='fixed w-full z-40 text-white flex justify-between items-center px-8 py-5 border-transparent border-b transition bg-black shadow-2xl'
         /> 
@@ -39,8 +39,9 @@ const Cart = () => {
            <Link to='/'><span className='flex items-center cursor-pointer'>Home<FaAngleRight/></span></Link>
            <span>Cart</span>
           </p>
-        <div className=''>
+        <div className='flex items-start justify-center'>
           <CartProducts2 />
+          <Checkout />
         </div>
         </div>
       </div>
