@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import { Home, SearchPage, Blog, Men, Women, AllProducts, Kids, Wishlist, Cart, BestSellers, NewArrivals, User} from './Pages/index.jsx';
+import { Home, SearchPage, Blog, Men, Women, AllProducts, Kids, Wishlist, Cart, BestSellers, NewArrivals, User} from './Pages/Index.jsx';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { useStateContext } from './Contexts/ContextProvider.jsx';

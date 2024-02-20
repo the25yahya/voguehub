@@ -28,7 +28,7 @@ const NavCart = () => {
                 <p className='font-semibold'>${state.subtotal}</p>
               </div>
               <Link to='/Cart'>
-               <button className='bg-black text-white w-full px-4 py-2 mt-4 text-sm font-semibold transition hover:bg-transparent hover:text-black'>VIEW CART</button>
+               <button onClick={ToggleNavCart} className='bg-black text-white w-full px-4 py-2 mt-4 text-sm font-semibold transition hover:bg-transparent hover:text-black'>VIEW CART</button>
               </Link>
             </div>
         </div>
