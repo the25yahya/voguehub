@@ -5,7 +5,7 @@ import { Tooltip } from '@chakra-ui/react'
 import { useStateContext } from '../Contexts/ContextProvider';
 
 const Product2 = (props) => {
-   const {state, dispatch} = useStateContext();
+   const {state, dispatch,wishlistState, wishlistDispatch} = useStateContext();
     const [mainImg, setMainImg] = useState(props.img1);
   const setImg2 = () =>{
     setMainImg(props.img2);
@@ -15,13 +15,16 @@ const Product2 = (props) => {
   }
   const addToCart = () =>{
     dispatch({ type : 'ADD_TO_CART', payload:props})
-    console.log(state);
+  };
+  const addToWishlist = () =>{
+    wishlistDispatch({ type : 'ADD_TO_WISHLIST', payload:props})
+    console.log(wishlistState);
   };
   return (
     <div className='mt-5 mx-4'>
          <div className='relative group cursor-pointer'><img  onMouseEnter={setImg2} onMouseLeave={setImg1}  className='w-200' src={mainImg} />
           <div className='peer absolute bottom-0 py-3 w-full bg-white text-black items-center justify-between px-2 hidden group-hover:flex appear-from-bottom transition'>
-           <Tooltip label='Add To Wishlist'><span><FaRegHeart /></span></Tooltip>
+           <Tooltip label='Add To Wishlist'><span onClick={addToWishlist}><FaRegHeart /></span></Tooltip>
            <p onClick={addToCart} className='text-sm border-x px-5 border-black'>ADD TO CART</p>
            <Tooltip label='View Details'><span><FaEye /></span></Tooltip>
           </div>
