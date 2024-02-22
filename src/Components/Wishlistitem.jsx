@@ -4,11 +4,11 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 const Wishlistitem = (props) => {
   return (
-    <div className='flex items-center justify-start my-1 relative'>
-        <div onClick={props.onClick} className='absolute right-0 top-1 cursor-pointer text-sm'><TiDeleteOutline/></div>
-        <img className='w-60' src={props.img1} />
-     <div className='flex flex-col items-start ml-4'>
-        <p className='text-sm font-semibold w-150 mr-5'>{props.name}</p>
+    <div className='flex items-center justify-around my-1 w-full relative'>
+        <div className='flex items-center'>
+         <div onClick={props.onClick} className='cursor-pointer text-sm'><TiDeleteOutline/></div>
+        <img className='w-60 mx-5' src={props.img1} />
+        <p className='text-sm font-semibold w-200 mr-5'>{props.name}</p></div>
         <div className='text-sm'>
             <p className='flex items-center'>
                 <span>Price :</span>
@@ -17,11 +17,10 @@ const Wishlistitem = (props) => {
         </div>
         <div className='text-sm'>
             <p className='flex items-center'>
-                <span className='mr-1'>{props.type}'s</span> 
-                <span> Clothes</span>
+                <p className=''>in Stock</p>
             </p>
         </div>
-     </div>
+        <button className='bg-black px-6 py-2 text-white text-sm w-150'>Add To Cart</button>
     </div>
   )
 }

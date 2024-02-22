@@ -27,7 +27,14 @@ const WishlistProducts = () => {
         )
     })
   return (
-    <div className='flex flex-col'>{WishlistItems}</div>
+    <div className='flex flex-col items-center'>
+      <div className='flex items-center justify-around w-1/2 mr-50 font-semibold mb-8'>
+        <p>Products</p>
+        <p>Price</p>
+        <p>Stock Status</p>
+      </div>
+      {WishlistItems}
+    </div>
   )
 }
 
