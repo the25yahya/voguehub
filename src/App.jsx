@@ -11,10 +11,12 @@ import NavWishlist from './Components/NavWishlist.jsx';
 import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import NavCart from './Components/NavCart.jsx';
+import { Analytics } from "@vercel/analytics/react"
 const App = () => {
   const {loading,navCart} = useStateContext();
   return (
     <ChakraProvider>
+      <Analytics/>
       <BrowserRouter>
       {loading ? <Loader /> : 
       <div>
