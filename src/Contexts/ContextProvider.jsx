@@ -26,6 +26,7 @@ export const ContextProvider = ({children}) => {
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('token'));
+  const [ USERNAME,setUSERNAME ] = useState(localStorage.getItem("USERNAME"))
   const [userInfo, setUserInfo] = useState([])
   ///////////////////////
   const ToggleNavCart = () => {
@@ -229,7 +230,7 @@ const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, wishlistIn
 
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch,token,setToken,userInfo, setUserInfo}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch,token,setToken,userInfo, setUserInfo, USERNAME, setUSERNAME}}
         >
             {children}
         </StateContext.Provider>

@@ -6,7 +6,8 @@ import { useStateContext } from '../Contexts/ContextProvider';
 import { Link } from 'react-router-dom';
 
 const User = () => {
-   const {token} = useStateContext();
+   const {token,userInfo,USERNAME} = useStateContext();
+   console.log(userInfo);
    return (
       <div className='flex flex-col items-center relative'>
         <Navbar 
@@ -14,8 +15,8 @@ const User = () => {
         />
         {token ? (
           // Render an empty div if token is true
-          <div className='mt-28'>
-            <h1>hi</h1>
+          <div className='mt-28 w-100'>
+            <h1>Hello {USERNAME} , not {USERNAME} ? <span className='underline'>Log out here</span></h1>
           </div>
         ) : (
           // Render the login form if token is false
