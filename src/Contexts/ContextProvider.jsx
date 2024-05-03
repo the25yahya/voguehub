@@ -11,13 +11,6 @@ import WomenCollection from '../Data/WomenProducts.json'
 import KidsCollection from '../Data/KidsProducts.json'
 
 
-const initialState = {
-    cart : false,
-    user : false,
-} 
-
-
-
 export const ContextProvider = ({children}) => {
   const reloadPage = () => {
     window.location.reload();
@@ -32,6 +25,8 @@ export const ContextProvider = ({children}) => {
   const [ProductsNav, setProductsNav] = useState(false);
   const [pages, setPages] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [userInfo, setUserInfo] = useState([])
   ///////////////////////
   const ToggleNavCart = () => {
     setNavCart(!navCart);
@@ -234,7 +229,7 @@ const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, wishlistIn
 
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch,token,setToken,userInfo, setUserInfo}}
         >
             {children}
         </StateContext.Provider>

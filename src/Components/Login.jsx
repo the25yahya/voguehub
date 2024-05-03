@@ -3,19 +3,27 @@ import { TiDelete } from "react-icons/ti";
 import { useStateContext } from '../Contexts/ContextProvider';
 import axios from "axios"
 const Login = () => {
-  const {login,CloseLogin,register, setRegister} = useStateContext();
+  const {login,CloseLogin,setRegister,token,setToken,userInfo, setUserInfo} = useStateContext();
   const RegisterFunc = () =>{
     CloseLogin();
     setRegister(true);
   }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const ClearCredentials = () => {
+    setEmail("");
+    setPassword("");
+  }
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+  const handleLoginToken = (token) => {
+    setToken(token);
+    localStorage.setItem('token', token);
   };
   const apiCallLogin = () => {
     axios.post("http://localhost:3001/login", {
@@ -24,6 +32,10 @@ const Login = () => {
     })
       .then(response => {
         console.log("Response:", response.data); // Log the response data
+        handleLoginToken(response.data.token);
+        setUserInfo(response.data.result);
+        ClearCredentials();
+        CloseLogin();
       })
       .catch(error => {
         console.error("Error:", error); // Log any errors that occur during the request
