@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { FaChevronDown } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import '../App.css'
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";

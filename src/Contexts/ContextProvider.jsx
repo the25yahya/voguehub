@@ -10,10 +10,12 @@ import MenCollection from '../Data/MenProducts.json'
 import WomenCollection from '../Data/WomenProducts.json'
 import KidsCollection from '../Data/KidsProducts.json'
 
+
 const initialState = {
     cart : false,
     user : false,
 } 
+
 
 
 export const ContextProvider = ({children}) => {
