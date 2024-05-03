@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,SearchOpen} = useStateContext();
+  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,SearchOpen,token} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
@@ -72,7 +72,12 @@ const Navbar = (props) => {
         <Link to='/'><h1 className='title text-3xl cursor-pointer'>VogueHUB</h1></Link>
       </div>
       <div className='flex items-center'>
+       {token ? (
+        <Link to="/MyAccount"><div className='text-2xl mr-5'><FaUserCircle /></div></Link>
+      ) : (
         <p onClick={OpenLogin} className='mr-5 font-semibold cursor-pointer hidden lg:block'>LOGIN</p>
+      )}
+
         <Link to='/Search' ><div onClick={SearchOpen} className='mr-3 text-xl font-bold cursor-pointer'><IoIosSearch/></div></Link>
         <Tooltip label='wishlist'><div onClick={OpenWishlist} className='mr-3 cursor-pointer text-lg'><FaRegHeart/></div></Tooltip>
         <Tooltip label='cart'>
