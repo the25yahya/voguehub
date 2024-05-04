@@ -9,7 +9,7 @@ const Women = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/allProducts');
+        const response = await axios.get('http://192.168.8.124:3001/allProducts');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

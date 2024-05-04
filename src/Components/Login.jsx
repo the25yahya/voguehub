@@ -30,7 +30,7 @@ const Login = () => {
     localStorage.setItem("USERNAME", USERNAME);
   }
   const apiCallLogin = () => {
-    axios.post("http://localhost:3001/login", {
+    axios.post("http://192.168.8.124:3001/login", {
       email: email,
       password: password
     })
@@ -43,7 +43,7 @@ const Login = () => {
         CloseLogin();
       })
       .catch(error => {
-        console.error("Error:", error); // Log any errors that occur during the request
+        window.alert("Invalid email or password"); // Log any errors that occur during the request
       });
   };
   return (
