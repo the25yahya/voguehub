@@ -31,7 +31,7 @@ const Register = () => {
     setUsername(event.target.value);
   };
   const apiCallSignUp = () => {
-    axios.post("http://localhost:3001/signup", {
+    axios.post("http://192.168.8.124:3001/signup", {
       username: username,
       email: email,
       password: password
