@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import { useStateContext } from '../Contexts/ContextProvider'
 import Navbar from '../Components/Navbar';
 import { LuSettings2 } from "react-icons/lu";
 import Dropdown from '../Components/Dropdown';
@@ -9,8 +8,6 @@ import Product2 from '../Components/Product2';
 import axios from 'axios';
 
 const AllProducts = () => {
-  //const {AllProducts} = useStateContext();
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

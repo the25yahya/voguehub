@@ -3,7 +3,7 @@ import { TiDelete } from "react-icons/ti";
 import { useStateContext } from '../Contexts/ContextProvider';
 import axios from "axios"
 const Login = () => {
-  const {login,CloseLogin,setRegister,token,setToken,userInfo, setUserInfo,setUSERNAME,USERNAME} = useStateContext();
+  const {login,CloseLogin,setRegister,setToken,setUserInfo,setUSERNAME,USERNAME} = useStateContext();
   const RegisterFunc = () =>{
     CloseLogin();
     setRegister(true);

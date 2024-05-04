@@ -5,10 +5,6 @@ import Product from "../Components/Product";
 import Product2 from "../Components/Product2";
 import WinterCollection from '../Data/WinterCollection.json'
 import PopularCollection from '../Data/PopularProducts.json'
-import AllCollection from '../Data/AllProducts.json'
-import MenCollection from '../Data/MenProducts.json'
-import WomenCollection from '../Data/WomenProducts.json'
-import KidsCollection from '../Data/KidsProducts.json'
 
 export const ContextProvider = ({children}) => {
   const reloadPage = () => {
@@ -87,7 +83,7 @@ export const ContextProvider = ({children}) => {
     })
     const PopularProducts = PopularCollection.map((item) =>{
       return(
-        <Product2 
+        <Product 
           key={item.name}
           name={item.name}
           img1={item.img1}
@@ -99,74 +95,6 @@ export const ContextProvider = ({children}) => {
           description={item.description}
           type={item.type}
           tag={item.tag}
-        />
-      )
-    })
-    const AllProducts = AllCollection.map((item) =>{
-      return(
-        <Product2 
-          key={item.name}
-          name={item.name}
-          img1={item.img1}
-          img2={item.img2}
-          img3={item.img3}
-          img4={item.img4}
-          img5={item.img5}
-          price={item.price}
-          description={item.description}
-          type={item.type}
-          tag={item.tag}
-        />
-      )
-    })
-    const WomenProducts = WomenCollection.map((item) =>{
-      return(
-        <Product2 
-          key={item.name}
-          name={item.name}
-          img1={item.img1}
-          img2={item.img2}
-          img3={item.img3}
-          img4={item.img4}
-          img5={item.img5}
-          price={item.price}
-          description={item.description}
-          type={item.type}
-          tag={item.tag}
-        />
-      )
-    })
-    const KidsProducts = KidsCollection.map((item) =>{
-      return(
-        <Product2 
-          key={item.name}
-          name={item.name}
-          img1={item.img1}
-          img2={item.img2}
-          img3={item.img3}
-          img4={item.img4}
-          img5={item.img5}
-          price={item.price}
-          description={item.description}
-          type={item.type}
-          tag={item.tag}
-        />
-      )
-    })
-    const MenProducts = MenCollection.map((item) =>{
-      return(
-        <Product2 
-          key={item.name}
-          name={item.name}
-          img1={item.img1}
-          img2={item.img2}
-          img3={item.img3}
-          img4={item.img4}
-          img5={item.img5}
-          price={item.price}
-          description={item.description}
-          tag={item.tag}
-          type={item.type}
         />
       )
     })
@@ -229,7 +157,7 @@ const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, wishlistIn
 
     return(
         <StateContext.Provider
-          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,AllProducts,WomenProducts,KidsProducts,MenProducts,state,dispatch,wishlistState,wishlistDispatch,token,setToken,userInfo, setUserInfo, USERNAME, setUSERNAME}}
+          value={{setHomeImg,homeImg,shop,setShop,navCart,setNavCart,ProductsNav,setProductsNav,pages,setPages,sidebar,setSidebar,ToggleNavCart,ToggleSidebar,reloadPage,loading,navWishlist, setNavWishlist, scrollToTop,WinterProducts,login,OpenLogin,CloseLogin,isSearchPageOpen, setIsSearchPageOpen,SearchClose,SearchOpen,PopularProducts,wishlist,setWishlist,register,setRegister,state,dispatch,wishlistState,wishlistDispatch,token,setToken,userInfo, setUserInfo, USERNAME, setUSERNAME}}
         >
             {children}
         </StateContext.Provider>

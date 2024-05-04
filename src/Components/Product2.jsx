@@ -5,7 +5,7 @@ import { Tooltip } from '@chakra-ui/react'
 import { useStateContext } from '../Contexts/ContextProvider';
 
 const Product2 = (props) => {
-   const {state, dispatch,wishlistState, wishlistDispatch} = useStateContext();
+   const {dispatch,wishlistState, wishlistDispatch} = useStateContext();
     const [mainImg, setMainImg] = useState(props.img1);
   const setImg2 = () =>{
     setMainImg(props.img2);

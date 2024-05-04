@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Shop = () => {
 
-  const {shop, setShop} = useStateContext();
+  const {setShop} = useStateContext();
   const CloseShop = () => {
     setShop(false);
    }

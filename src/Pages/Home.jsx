@@ -8,7 +8,7 @@ import Categories from '../Components/Categories';
 import Navbar from '../Components/Navbar';
 
 const Home = () => {
-  const {homeImg,setHomeImg,navCart,isSearchPageOpen} = useStateContext();
+  const {homeImg,setHomeImg,isSearchPageOpen} = useStateContext();
   const setImg1 = () =>{
     setHomeImg('hero')
   }

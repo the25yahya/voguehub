@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import { FaChevronDown } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import '../App.css'
@@ -8,7 +8,6 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { MdOutlineMenu } from "react-icons/md";
 import Shop from './Shop.jsx';
 import { useStateContext } from '../Contexts/ContextProvider';
-import NavCart from './NavCart';
 import Products from './Products';
 import PagesNav from './PagesNav';
 import { Tooltip } from '@chakra-ui/react'
@@ -17,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
-  const {shop,setShop,navCart,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,SearchOpen,token} = useStateContext();
+  const {shop,setShop,ProductsNav,setProductsNav,pages,setPages,sidebar,ToggleNavCart,ToggleSidebar,reloadPage,setNavWishlist,scrollToTop,OpenLogin,SearchOpen,token} = useStateContext();
    const OpenShop = () => {
     setShop(true);
     setPages(false);
