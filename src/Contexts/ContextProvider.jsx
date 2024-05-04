@@ -10,7 +10,6 @@ import MenCollection from '../Data/MenProducts.json'
 import WomenCollection from '../Data/WomenProducts.json'
 import KidsCollection from '../Data/KidsProducts.json'
 
-
 export const ContextProvider = ({children}) => {
   const reloadPage = () => {
     window.location.reload();

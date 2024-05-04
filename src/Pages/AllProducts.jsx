@@ -1,14 +1,46 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { useStateContext } from '../Contexts/ContextProvider'
 import Navbar from '../Components/Navbar';
 import { LuSettings2 } from "react-icons/lu";
 import Dropdown from '../Components/Dropdown';
 import { FaAngleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Product2 from '../Components/Product2';
+import axios from 'axios';
 
 const AllProducts = () => {
-  const {AllProducts} = useStateContext();
+  //const {AllProducts} = useStateContext();
 
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/allProducts');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const AllProducts = products.map((item) =>{
+    return(
+      <Product2 
+        key={item.name}
+        name={item.name}
+        img1={item.img1}
+        img2={item.img2}
+        img3={item.img3}
+        img4={item.img4}
+        img5={item.img5}
+        price={item.price}
+        description={item.description}
+        type={item.type}
+        tag={item.tag}
+      />
+    )
+  })
   return (
     <div className='flex flex-col items-center'>
       <Navbar 
