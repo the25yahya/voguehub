@@ -10,7 +10,6 @@ export const ContextProvider = ({children}) => {
   const reloadPage = () => {
     window.location.reload();
   };
-  const [searchTerm, setSearchTerm] = useState('');
   const [wishlist, setWishlist] = useState([]);
   const [shop, setShop] = useState(false);
   const [navCart, setNavCart] = useState(false);
@@ -83,7 +82,7 @@ export const ContextProvider = ({children}) => {
     })
     const PopularProducts = PopularCollection.map((item) =>{
       return(
-        <Product 
+        <Product2
           key={item.name}
           name={item.name}
           img1={item.img1}
