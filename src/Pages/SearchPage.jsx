@@ -5,12 +5,20 @@ import { useStateContext } from '../Contexts/ContextProvider';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Product2 from '../Components/Product2';
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react';
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const {SearchClose,PopularProducts} = useStateContext();
   const [searchResult, setSearchResult] = useState([]);
   const [isReturned, setIsReturned] = useState(false);
+  const [showNotFoundAlert, setShowNotFoundAlert] = useState(false);
+
   const ReturnedProducts = searchResult.map((item) =>{
     return(
       <Product2
@@ -60,6 +68,16 @@ const SearchPage = () => {
   return (
     <div className='p-20 flex flex-col items-center fade-in'>
       <Link to='/'><div onClick={SearchClose} className='absolute right-10 top-10 text-3xl cursor-pointer z-50'><TiDeleteOutline /></div></Link>
+      {/* Conditionally render the alert */}
+      {showNotFoundAlert && (
+        <div className="mb-5">
+          <Alert status='error'>
+            <AlertIcon />
+            <AlertTitle>Item not found in inventory!</AlertTitle>
+            <AlertDescription>| Please try again</AlertDescription>
+          </Alert>
+        </div>
+      )}
       <div className='flex items-center border-2 border-black w-400 p-3 justify-between'>
         <input
           placeholder='Search Products'
