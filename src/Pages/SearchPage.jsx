@@ -32,33 +32,29 @@ const SearchPage = () => {
     setSearchTerm(event.target.value);
   };
   const apiCallSearch = () => {
-    axios.post("http://192.168.8.124:3001/Search", {
-      searchTerm: searchTerm // Assuming searchTerm is defined somewhere in your component
-    })
-    .then(response => {
-      console.log("Response:", response.data);
-      setSearchResult(response.data.result);
-      setIsReturned(true)
-    })
-    .catch(error => {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        if (error.response.status === 400) {
-          window.alert("Item not found in inventory");
+    if (searchTerm.trim() !== "") {
+      axios.post("http://192.168.8.124:3001/Search", {
+        searchTerm: searchTerm
+      })
+      .then(response => {
+        console.log("Response:", response.data);
+        setSearchResult(response.data.result);
+        setIsReturned(true);
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 400) {
+          setShowNotFoundAlert(true); // Show the alert if item not found
+          // Hide the alert after 3 seconds
+          setTimeout(() => {
+            setShowNotFoundAlert(false);
+          }, 2000);
         } else {
-          console.error("Server responded with an error:", error.response.data);
-          window.alert("An unexpected error occurred. Please try again later.");
+          console.error("Error occurred:", error);
+          setShowNotFoundAlert(false); // Hide the alert if another error occurred
+          // Display a different kind of error message or handle it as required
         }
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error("No response received from the server:", error.request);
-        window.alert("No response received from the server. Please try again later.");
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error("Error setting up the request:", error.message);
-        window.alert("An error occurred. Please try again later.");
-      }
-    });
+      });
+    }
   };
   
   return (
@@ -74,15 +70,17 @@ const SearchPage = () => {
         />
         <span onClick={apiCallSearch} className='cursor-pointer'><IoIosSearch /></span>
       </div>
-      <div className='mt-12 w-full flex flex-col justify-center items-center'>
-        <h2 className='font-semibold text-3xl'>Popular Products</h2>
         {/* Conditionally render based on searchTerm */}
         {isReturned == false ? (
-          <div className='flex items-center mt-5 flex-wrap justify-center'>{PopularProducts}</div>
+          <div className='mt-12 w-full flex flex-col justify-center items-center'>
+            <h2 className='font-semibold text-3xl'>Popular Products</h2>
+            <div className='flex items-center mt-5 flex-wrap justify-center'>{PopularProducts}</div>
+          </div>
         ) : (
-          <div className='flex pl-28 flex-wrap w-full mt-50'>{ReturnedProducts}</div>
+          <div className='mt-12 w-full flex flex-col justify-center items-center'>
+           <div className='flex pl-28 flex-wrap w-full'>{ReturnedProducts}</div>
+          </div>
         )}
-      </div>
     </div>
   );
   
